@@ -1,6 +1,9 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
 summary: ""           # one line for the contents and listings
+variant: ""           # only when two recipes share a title, e.g. "three fillings"
+credit: ""            # optional: replaces "From the kitchen of …" when the story is more specific, e.g.
+                      # "[Dad](/people/dad/)'s recipe, written on [Grandma Vi](/people/grandma-vi/)'s card"
 people: []            # who it's from, e.g. ["Grandma Vi"]. Must match a person's title.
 categories: []        # e.g. ["Sides"], ["Main dishes"]
 tags: []

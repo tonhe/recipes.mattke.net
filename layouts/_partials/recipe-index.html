@@ -1,7 +1,7 @@
 <ul class="recipe-index">
 {{- range .ByTitle }}
   <li>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.variant }} <span class="variant">· {{ . }}</span>{{ end }}{{ if .Draft }} <span class="draft-tag">draft</span>{{ end }}
     {{- with .GetTerms "people" }} <span class="by">{{ (index . 0).LinkTitle }}</span>{{ end }}
     {{- with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
   </li>

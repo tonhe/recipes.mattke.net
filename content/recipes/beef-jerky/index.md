@@ -1,7 +1,8 @@
 ---
 title: "Beef Jerky"
 summary: "Flank or round steak in a soy, Worcestershire and hickory salt marinade, dried low in the oven."
-people: ["Dad"]
+people: ["Dad", "Grandma Vi"]
+credit: "[Dad](/people/dad/)'s recipe, written on [Grandma Vi](/people/grandma-vi/)'s card as “Perry's recipe.”"
 categories: ["Snacks & sauces"]
 tags: ["beef", "jerky"]
 oven: "lowest temp"
@@ -9,10 +10,6 @@ time: "4-6 hrs"
 time_label: "Dry"
 title_image: title.png
 
-source:
-  kind: note
-  where: "On Grandma Vi's card"
-  label: "Grandma wrote this one down as \"Perry's recipe.\""
 
 ingredient_groups:
   - ingredients:
