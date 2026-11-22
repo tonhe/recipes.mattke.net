@@ -35,4 +35,7 @@ steps:
   - "Cover w/ foil – Bake @ 375°F for 25-30 (until sauce bubbling)"
   - "Cover w/ fried Onions – Bake 3 mins until they darken slightly"
 
+photos:
+  - image: casserole.jpg
+    caption: "Out of the oven"
 ---
