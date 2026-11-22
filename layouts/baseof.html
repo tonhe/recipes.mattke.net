@@ -27,6 +27,11 @@
         <a href="{{ "/people/" | relURL }}"{{ if eq $here "people" }} aria-current="page"{{ end }}>People</a>
         <a href="{{ "/categories/" | relURL }}"{{ if eq $here "categories" }} aria-current="page"{{ end }}>Kinds of dishes</a>
         <a href="{{ "/about/" | relURL }}"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>
+        {{- /* The review page is a draft, so it (and this link) only exists on the preview server. */}}
+        {{- if ne hugo.Environment "production" }}{{ with site.GetPage "/review" }}
+        {{- $open := 0 }}{{ range where (where site.RegularPages "Section" "recipes") "Draft" true }}{{ $open = add $open (len (.Params.review | default slice)) }}{{ end }}
+        <a class="nav-review" href="{{ .RelPermalink }}"{{ if eq $.RelPermalink .RelPermalink }} aria-current="page"{{ end }}>Review{{ if $open }} <span class="nav-count">{{ $open }}</span>{{ end }}</a>
+        {{- end }}{{ end }}
       </nav>
     </header>
     <main id="main">

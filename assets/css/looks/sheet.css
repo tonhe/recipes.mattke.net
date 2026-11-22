@@ -320,3 +320,5 @@ a[data-lightbox] { cursor: zoom-in; display: block; }
 .review-collect { margin-top: 2.5rem; padding-top: 1rem; border-top: 2px solid var(--ink); display: grid; gap: 0.75rem; justify-items: start; }
 .review-collect h2 { font-weight: 400; font-size: 1.4rem; margin: 0; }
 .review-out { min-height: 8rem; }
+.nav-review { color: #8f1d17; }
+.nav-count { display: inline-block; min-width: 1.4em; padding: 0 0.3em; border-radius: 1em; background: #8f1d17; color: #fff; font-size: 0.8em; text-align: center; text-decoration: none; }

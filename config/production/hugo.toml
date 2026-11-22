@@ -1,0 +1,3 @@
+# Production-only settings (hugo build defaults to this environment; hugo server uses development).
+# The card review page is a working tool for the preview server and never ships.
+ignoreFiles = ['content[/\\]review[/\\]']

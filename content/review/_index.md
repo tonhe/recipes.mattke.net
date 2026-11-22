@@ -1,6 +1,6 @@
 ---
 title: "Cards that need a second pair of eyes"
-draft: true    # preview server only; never published
+# Preview server only: config/production/hugo.toml ignores this folder, so it never ships.
 sitemap:
   disable: true
 ---
