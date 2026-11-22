@@ -1,5 +1,5 @@
 ---
-title: "White Chili"
+title: "White Chicken Chili"
 summary: "Chicken and Great Northern bean chili with green chilies, cumin and oregano, finished with Monterey Jack cheese."
 credit: "[Tony](/people/tony/)'s copy of a recipe from Claudia Sanders, Shelbyville Ky."
 people: ["Tony"]
