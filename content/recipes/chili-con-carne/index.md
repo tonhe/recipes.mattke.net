@@ -32,9 +32,9 @@ steps:
   - "Cook onion, garlic & beef."
   - "Drain fat; add tomato sauce, tomatoes & beans, chili powder & the rest"
   - "Simmer 10 min"
-  - "Done when Corn Bread is Brown 30 min"
   - "Beat till smooth & spoon over meat mixture – top with parmesan"
   - "25 - 30 min"
+  - "Done when Corn Bread is Brown 30 min"
 
 editor_notes:
   - "The page doesn't name a pan. Spoon the topping over the chili in an ovenproof dish and bake at 425°."

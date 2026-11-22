@@ -6,7 +6,7 @@ summary: "A yeast pastry dough made with lard, chilled overnight, rolled thin ar
 people: ["Grandma Vi"]
 categories: ["Breads & rolls"]
 tags: ["pastry", "yeast", "kringle"]
-oven: "375"
+oven: "375°"
 time: "20-30 min"
 
 ingredient_groups:
@@ -31,7 +31,7 @@ steps:
   - "Mix til crumbly and size of peas –"
   - "Pour in flour mixture mix well – cover and refrigerate overnight."
   - "Roll in about 3-4 different pieces very thin – put filling to ½ in of edge – roll up – put in greased pan"
-  - "Cover let raise about 20-25 min"
+  - "Cover let rise about 20-25 min"
   - "Bake 375° 20-30 mins."
   - "Cover with cream cheese frosting –"
 

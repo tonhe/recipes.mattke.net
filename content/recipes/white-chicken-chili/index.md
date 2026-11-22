@@ -23,7 +23,6 @@ ingredients:
   - line: "¼ tsp. cayenne pepper"
   - line: "½ tsp. black pepper"
   - line: "2 tsp. white pepper"
-    editor: "The amount is faded off the page."
   - line: "salt to taste"
   - line: "¼ tsp. ground cloves"
   - line: "3 cups shredded Monterey Jack cheese"
