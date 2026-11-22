@@ -60,7 +60,7 @@
     <span class="note-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
     {{- end }}{{ end }}
     <blockquote><p>{{ . }}</p></blockquote>
-    {{- with $people }}<figcaption>{{ (index . 0).LinkTitle }}, on the card</figcaption>{{ end }}
+    {{- with $p.Params.author_note_by }}<figcaption>{{ . }}, on the card</figcaption>{{ else }}{{ with $people }}<figcaption>{{ (index . 0).LinkTitle }}, on the card</figcaption>{{ end }}{{ end }}
   </figure>
   {{- end }}
 

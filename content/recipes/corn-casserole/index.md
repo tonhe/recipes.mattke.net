@@ -22,5 +22,6 @@ steps:
   - "Mix together – 350° 45-50 min in Buttered pan"
 
 author_note: "good – But Fattening"
+author_note_by: "Vicki Markley"
 
 ---

@@ -39,6 +39,7 @@ steps:
   - ""
 
 author_note: ""       # closing remark on the card, verbatim
+author_note_by: ""    # only if someone other than the recipe's owner wrote that remark
 editor_notes: []      # your notes about the recipe as a whole
 
 sources:              # card photos in this folder, in order
