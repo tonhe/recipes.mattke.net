@@ -4,7 +4,7 @@
 {{ define "main" }}
 {{- $drafts := where (where site.RegularPages "Section" "recipes") "Draft" true }}
 {{- $n := 0 }}{{ $own := 0 }}{{ range $drafts }}{{ range .Params.review }}{{ if eq .kind "owner" }}{{ $own = add $own 1 }}{{ else }}{{ $n = add $n 1 }}{{ end }}{{ end }}{{ end }}
-{{- $names := slice "Grandma Vi" "Dad" "Tony" "Mom" }}{{ range site.Taxonomies.people }}{{ $names = $names | append .Page.Title }}{{ end }}{{ $names = $names | uniq }}
+{{- $names := slice "Grandma Vi" "Perry Mattke" "Tony Mattke" "Mom" }}{{ range site.Taxonomies.people }}{{ $names = $names | append .Page.Title }}{{ end }}{{ $names = $names | uniq }}
 <article class="review" aria-labelledby="review-h">
   <h1 id="review-h">{{ .Title }}</h1>
   <datalist id="people-list">{{ range $names }}<option value="{{ . }}">{{ end }}</datalist>

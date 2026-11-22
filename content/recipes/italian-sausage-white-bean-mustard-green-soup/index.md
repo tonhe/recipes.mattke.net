@@ -1,7 +1,7 @@
 ---
 title: "Italian Sausage, White Bean & Mustard Green Soup"
 summary: "Hearty, savory, creamy without cream or pasta."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Main dishes"]
 tags: ["soup", "sausage", "beans", "slow cooker"]
 yield: "Approximately 8-10 servings"

@@ -1,7 +1,7 @@
 ---
 title: "Awesome Beans"
 summary: "Canned baked beans simmered with browned ground beef, onion, garlic, mustard, brown sugar, Worcestershire and BBQ sauce."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Sides"]
 tags: ["beans", "beef"]
 time: "30 min"

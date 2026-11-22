@@ -2,7 +2,7 @@
 title: "“Southern” Italian Pasta e Fagioli"
 subtitle: "Slow Cooker Beef, Hot Italian Sausage, White Beans & Mustard Greens"
 summary: "A thick, hearty pasta e fagioli with ground beef, hot Italian sausage, beans, tomatoes, and greens. Serve the pasta separately so leftovers stay soup-like, and finish each bowl with Mezzetta hot chili pepper brine."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Main dishes"]
 tags: ["soup", "sausage", "beans", "pasta", "slow cooker"]
 yield: "8–10 servings"

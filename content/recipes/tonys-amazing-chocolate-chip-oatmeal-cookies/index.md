@@ -1,7 +1,7 @@
 ---
 title: "Tony's Amazing Chocolate Chip Oatmeal Cookies"
 summary: "Oatmeal cookies with semi-sweet and milk chocolate chips, baked on parchment until just brown at the edges."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Cookies & bars"]
 tags: ["cookies", "oatmeal", "chocolate"]
 oven: "375°"

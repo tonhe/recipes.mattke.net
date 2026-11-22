@@ -1,7 +1,7 @@
 ---
 title: "The Best Green Bean Casserole"
 summary: "Fresh green beans and browned mushrooms in a garlic and parmesan béchamel, baked and topped with French's fried onions."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Sides"]
 tags: ["green beans", "mushrooms", "casserole"]
 oven: "375°F"

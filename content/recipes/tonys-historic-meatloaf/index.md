@@ -1,7 +1,7 @@
 ---
 title: "Tony's Historic Meatloaf"
 summary: "A beef and pork meatloaf with panko, chili powder and thyme, baked on a sheet pan and brushed with a sweet catsup, honey and brown sugar topping."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Main dishes"]
 tags: ["beef", "pork", "meatloaf"]
 oven: "350°"

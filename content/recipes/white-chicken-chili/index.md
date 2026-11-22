@@ -2,8 +2,8 @@
 title: "White Chicken Chili"
 aliases: ["/recipes/white-chili/"]
 summary: "Chicken and Great Northern bean chili with green chilies, cumin and oregano, finished with Monterey Jack cheese."
-credit: "[Tony](/people/tony/)'s copy of a recipe from Claudia Sanders, Shelbyville Ky."
-people: ["Tony"]
+credit: "[Tony Mattke](/people/tony-mattke/)'s copy of a recipe from Claudia Sanders, Shelbyville Ky."
+people: ["Tony Mattke"]
 categories: ["Main dishes"]
 tags: ["chicken", "beans", "chili", "soup"]
 time: "about 2 hours"

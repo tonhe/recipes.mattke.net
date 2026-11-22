@@ -12,7 +12,7 @@ ingredients:
   - line: "Butter or oleo (1/2 stick)"
   - line: "1 1/2 qts milk"
   - line: "oysters"
-    editor: "Dad says 8 oz cans, probably eight of them."
+    editor: "Perry says 8 oz cans, probably eight of them."
   - line: "1 tsp Worcestershire sauce"
   - line: "Salt & pepper to taste"
 

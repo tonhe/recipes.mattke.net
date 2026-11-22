@@ -2,8 +2,8 @@
 title: "Salsa"
 draft: true           # the end of the vinegar note is burned off the card; Tony is finding his copy
 summary: "A big canning batch of tomato, onion and jalapeño salsa."
-people: ["Dad", "Grandma Vi"]
-credit: "[Dad](/people/dad/)'s recipe, written on [Grandma Vi](/people/grandma-vi/)'s card as “Perry's recipe.”"
+people: ["Perry Mattke", "Grandma Vi"]
+credit: "[Perry Mattke](/people/perry-mattke/)'s recipe, written on [Grandma Vi](/people/grandma-vi/)'s card as “Perry's recipe.”"
 categories: ["Snacks & sauces"]
 tags: ["canning", "tomatoes"]
 

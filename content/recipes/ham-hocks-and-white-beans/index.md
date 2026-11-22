@@ -1,7 +1,7 @@
 ---
 title: "Slow Cooker Smoked Ham Hocks & Creamy White Beans"
 summary: "My pork and beans: smoked ham hocks and navy beans slow-cooked all day, finished with jarred Great Northerns and mashed beans for body."
-people: ["Tony"]
+people: ["Tony Mattke"]
 categories: ["Main dishes"]
 tags: ["beans", "ham", "slow cooker", "soup"]
 time: "8-10 hours on low"
