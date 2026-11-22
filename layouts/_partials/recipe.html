@@ -15,7 +15,7 @@
     </p>
     {{- end }}
     {{- with $p.Params.source }}
-    <p class="recipe-source">{{ with .where }}<span class="clip-mast">{{ . }}</span>{{ end }}{{ .label }}{{ with .url }} <a href="{{ . }}">Read the article</a>.{{ end }}</p>
+    <p class="recipe-source{{ with .kind }} is-{{ . }}{{ end }}">{{ with .where }}<span class="clip-mast">{{ . }}</span>{{ end }}{{ .label }}{{ with .url }} <a href="{{ . }}">Read the article</a>.{{ end }}</p>
     {{- end }}
     <dl class="recipe-facts">
       {{- with $p.Params.yield }}<div><dt>Makes</dt><dd>{{ . }}</dd></div>{{ end }}
@@ -32,7 +32,7 @@
     <h2 id="ing-h">Ingredients</h2>
     {{- if $p.Params.ingredient_groups }}
       {{- range $g, $grp := $p.Params.ingredient_groups }}
-      <h3>{{ $grp.name }}</h3>
+      {{- with $grp.name }}<h3>{{ . }}</h3>{{ else }}{{ if $g }}<hr class="group-break">{{ end }}{{ end }}
       {{ partial "ingredient-list.html" (dict "items" $grp.ingredients "prefix" (printf "g%d" $g)) }}
       {{- end }}
     {{- else }}
@@ -62,7 +62,7 @@
     {{- range . }}{{ $cap := .caption }}{{ with $p.Resources.Get .image }}
     {{- $sm := .Resize "560x webp" }}
     <figure class="snapshot">
-      <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="{{ $p.Title }}{{ with $cap }}, {{ lower . }}{{ end }}">
+      <a href="{{ .RelPermalink }}" data-lightbox="dish" data-caption="{{ $cap }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="{{ $p.Title }}{{ with $cap }}, {{ lower . }}{{ end }}"></a>
       {{- with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
     </figure>
     {{- end }}{{ end }}
@@ -83,10 +83,10 @@
   <section class="originals" aria-labelledby="orig-h">
     <h2 id="orig-h">The original{{ if gt (len .) 1 }} cards{{ else }} card{{ end }}</h2>
     <div class="cards">
-    {{- range . }}{{ with $p.Resources.Get .image }}
+    {{- range . }}{{ $cap := .caption }}{{ with $p.Resources.Get .image }}
       {{- $sm := .Resize "720x webp" }}
       <figure class="card-photo">
-        <a href="{{ .RelPermalink }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="Photo of the handwritten card. The transcription above contains the same text."></a>
+        <a href="{{ .RelPermalink }}" data-lightbox="cards" data-caption="{{ $cap }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="Photo of the handwritten card. The transcription above contains the same text."></a>
       </figure>
     {{- end }}{{ end }}
     </div>
