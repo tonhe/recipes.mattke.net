@@ -6,7 +6,7 @@ enableRobotsTXT = true
 [params]
   author = "Anthony Mattke"
   description = "Family recipes from the Mattke kitchen, in the cooks' own words and handwriting."
-  look = "sheet"  # default look; others kept under /looks/ for comparison
+  look = "sheet"
 
 [taxonomies]
   person = "people"
