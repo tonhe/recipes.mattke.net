@@ -39,6 +39,10 @@ editor_notes:
   - "For the filling, use canned poppy seed filling from the store. You can mix a little water into the can to loosen it."
   - "The card doesn't give the cream cheese frosting."
 
+photos:
+  - image: kringle.jpg
+    caption: "Poppy seed filling, frosted, with sliced almonds"
+
 sources:
   - image: card-1.jpg
     caption: "The front: the yeast and the crumbly flour and lard"
