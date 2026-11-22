@@ -1,7 +1,7 @@
 ---
 title: "Grandma Vi's Cinnamon Rolls"
 summary: "Overnight yeast rolls with brown sugar and cinnamon. Dad's cut-down version, which still makes several dozen."
-people: ["Grandma Vi"]
+people: ["Grandma Vi", "Dad"]
 categories: ["Breads & rolls"]
 tags: ["yeast", "rolls", "cinnamon"]
 yield: "Several dozen"
