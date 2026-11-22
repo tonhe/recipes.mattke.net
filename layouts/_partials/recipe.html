@@ -12,6 +12,7 @@
       <span class="title-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
       {{- end }}{{ end }}
     </h1>
+    {{- with $p.Params.subtitle }}<p class="recipe-subtitle">{{ . }}</p>{{ end }}
     {{- with $p.Params.credit }}
     <p class="recipe-credit">{{ . | markdownify }}</p>
     {{- else }}{{ with $people }}
@@ -24,6 +25,7 @@
     {{- end }}
     <dl class="recipe-facts">
       {{- with $p.Params.yield }}<div><dt>Makes</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{- with $p.Params.prep }}<div><dt>Prep</dt><dd>{{ . }}</dd></div>{{ end }}
       {{- with $p.Params.oven }}<div><dt>Oven</dt><dd>{{ . }}</dd></div>{{ end }}
       {{- with $p.Params.time }}<div><dt>{{ $p.Params.time_label | default "Bake" }}</dt><dd>{{ . }}</dd></div>{{ end }}
     </dl>

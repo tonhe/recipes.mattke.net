@@ -1,3 +1,5 @@
+{{- /* Preview-only page: uses the original photos, not resized copies, because the dev server drops
+     resized copies of photos that no published page uses (show_photos: false). */ -}}
 {{ define "head" }}<meta name="robots" content="noindex">{{ end }}
 {{ define "main" }}
 {{- $drafts := where (where site.RegularPages "Section" "recipes") "Draft" true }}
@@ -18,7 +20,7 @@
     {{- $id := printf "o-%s" $r.File.ContentBaseName }}
     <div class="review-owner">
       <div class="review-photos">
-        {{- range $r.Params.sources }}{{ with $r.Resources.Get .image }}{{ $sm := .Resize "700x webp q82" }}
+        {{- range $r.Params.sources }}{{ with $r.Resources.Get .image }}{{ $sm := . }}
         <a href="{{ .RelPermalink }}" data-lightbox="owner-{{ $r.File.ContentBaseName }}" data-caption="{{ $r.Title }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="Photo of the page" loading="lazy"></a>
         {{- end }}{{ end }}
       </div>
@@ -40,16 +42,16 @@
     {{- with $r.Resources.Get $q.card }}
     {{- $W := float .Width }}{{ $H := float .Height }}
     {{- $x := float (index $q.box 0) }}{{ $y := float (index $q.box 1) }}{{ $w := float (index $q.box 2) }}{{ $h := float (index $q.box 3) }}
-    {{- $big := .Resize "1600x webp q85" }}
+    {{- $big := . }}
     <div class="review-q">
       <p class="review-question"><span class="review-num">{{ $qn }}.</span> {{ $q.question }}</p>
       <figure class="review-zoom" style="{{ printf "aspect-ratio:%g/%g" $w $h | safeCSS }}">
-        <img src="{{ $big.RelPermalink }}" alt="" style="{{ printf "width:%.3f%%;left:-%.3f%%;top:-%.3f%%" (mul 100 (div $W $w)) (mul 100 (div $x $w)) (mul 100 (div $y $h)) | safeCSS }}">
+        <img src="{{ $big.RelPermalink }}" alt="" loading="lazy" style="{{ printf "width:%.3f%%;left:-%.3f%%;top:-%.3f%%" (mul 100 (div $W $w)) (mul 100 (div $x $w)) (mul 100 (div $y $h)) | safeCSS }}">
       </figure>
       <div class="review-row">
         <a class="review-card" href="{{ .RelPermalink }}" data-lightbox="review-{{ $r.File.ContentBaseName }}-{{ $i }}" data-caption="{{ $r.Title }}: {{ $q.card }}">
-          {{- $sm := .Resize "480x webp" }}
-          <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="The whole card">
+          {{- $sm := . }}
+          <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="The whole card" loading="lazy">
           <span class="review-box" style="{{ printf "left:%.3f%%;top:%.3f%%;width:%.3f%%;height:%.3f%%" (mul 100 (div $x $W)) (mul 100 (div $y $H)) (mul 100 (div $w $W)) (mul 100 (div $h $H)) | safeCSS }}"></span>
         </a>
         <div class="review-answer">

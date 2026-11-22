@@ -1,5 +1,6 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
+subtitle: ""          # optional second line under the title
 summary: ""           # one line for the contents and listings
 variant: ""           # only when two recipes share a title, e.g. "three fillings"
 credit: ""            # optional: replaces "From the kitchen of …" when the story is more specific, e.g.
@@ -8,6 +9,7 @@ people: []            # who it's from, e.g. ["Grandma Vi"]. Must match a person'
 categories: []        # e.g. ["Sides"], ["Main dishes"]
 tags: []
 yield: ""             # as written, e.g. "Serves about 10"
+prep: ""              # optional prep time
 oven: ""              # e.g. "350°"
 time: ""              # as written, e.g. "about 1 hr"
 time_label: ""        # defaults to "Bake". Use "Cook", "Simmer", etc. for stovetop recipes.
