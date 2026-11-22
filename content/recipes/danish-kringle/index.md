@@ -42,6 +42,8 @@ editor_notes:
 photos:
   - image: kringle.jpg
     caption: "Poppy seed filling, frosted, with sliced almonds"
+  - image: kringle-2.jpg
+    caption: "The layers, up close"
 
 sources:
   - image: card-1.jpg
