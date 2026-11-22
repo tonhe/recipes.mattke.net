@@ -9,6 +9,7 @@ oven: ""              # e.g. "350°"
 time: ""              # as written, e.g. "about 1 hr"
 time_label: ""        # defaults to "Bake". Use "Cook", "Simmer", etc. for stovetop recipes.
 featured: false       # true puts it on the front page
+feature_order: 0      # lower comes first; the first featured recipe gets the big spot
 
 # Handwriting crops: black ink on a transparent background, saved in this folder.
 # From a card photo:  crop it, keep the darkest channel, threshold, use as alpha. See README.

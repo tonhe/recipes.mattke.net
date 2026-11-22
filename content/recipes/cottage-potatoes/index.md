@@ -5,6 +5,7 @@ people: ["Grandma Vi"]
 categories: ["Sides"]
 tags: ["potatoes", "casserole", "cheese"]
 featured: true
+feature_order: 1
 yield: "Serves about 10"
 oven: "350°"
 time: "about 1 hr"

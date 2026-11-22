@@ -5,6 +5,14 @@
   {{- with .Params.full_name }}<p class="full-name">{{ . }}</p>{{ end }}
   {{ .Content }}
 </header>
+{{- with .Params.featured }}
+{{- $picks := slice }}
+{{- range . }}{{ with site.GetPage (printf "/recipes/%s" .) }}{{ $picks = $picks | append . }}{{ else }}{{ warnf "featured recipe not found: %s" . }}{{ end }}{{ end }}
+{{- with $picks }}
+{{ partial "feature.html" (index . 0) }}
+{{ partial "favorites-row.html" (dict "pages" (after 1 .) "heading" "More favorites" "id" "person-favs-h" "showCook" false) }}
+{{- end }}
+{{- end }}
 <section class="term-recipes{{ if $isPerson }} by-person{{ end }}"{{ if $isPerson }} aria-labelledby="recipes-h"{{ else }} aria-label="Recipes"{{ end }}>
   {{- if $isPerson }}<h2 id="recipes-h">Recipes</h2>{{ end }}
   {{ if .Pages }}{{ partial "recipe-index.html" .Pages }}{{ else }}<p>No recipes here yet.</p>{{ end }}

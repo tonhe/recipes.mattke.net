@@ -1,31 +1,14 @@
 {{ define "main" }}
 {{- $recipes := where site.RegularPages "Section" "recipes" }}
-{{- $feature := index (where $recipes "Params.featured" true) 0 }}
-{{- if not $feature }}{{ $feature = index $recipes 0 }}{{ end }}
-
+{{- $featured := sort (where $recipes "Params.featured" true) "Params.feature_order" }}
 <section class="intro" aria-label="About this collection">
   <div class="intro-text">{{ .Content }}</div>
   <p class="tally">{{ len $recipes }} recipe{{ if ne (len $recipes) 1 }}s{{ end }} from {{ len site.Taxonomies.people }} kitchen{{ if ne (len site.Taxonomies.people) 1 }}s{{ end }}, and counting.</p>
 </section>
 
-{{- with $feature }}
-{{- $cook := index (.GetTerms "people") 0 }}
-<section class="feature" aria-labelledby="feature-h">
-  <div class="feature-words">
-    {{- with .Params.note_image }}{{ with $feature.Resources.Get . }}
-    <span class="feature-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
-    {{- end }}{{ end }}
-    {{- with .Params.author_note }}<p class="feature-quote">&ldquo;{{ . }}&rdquo;{{ with $cook }} <span class="feature-who">{{ .LinkTitle }}</span>{{ end }}</p>{{ end }}
-    <h2 id="feature-h" class="feature-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{- with .Summary }}<p class="feature-summary">{{ . | plainify }}</p>{{ end }}
-  </div>
-  {{- with .Params.sources }}{{ with $feature.Resources.Get (index . 0).image }}
-  {{- $sm := .Resize "640x webp" }}
-  <a class="feature-card" href="{{ $feature.RelPermalink }}" tabindex="-1" aria-hidden="true">
-    <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="">
-  </a>
-  {{- end }}{{ end }}
-</section>
+{{- with $featured }}
+{{ partial "feature.html" (index . 0) }}
+{{ partial "favorites-row.html" (dict "pages" (after 1 .) "heading" "Family favorites" "id" "favorites-h" "showCook" true) }}
 {{- end }}
 
 <section class="contents" aria-labelledby="contents-h">

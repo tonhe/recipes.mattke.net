@@ -2,6 +2,9 @@
 title: "Grandma Vi"
 full_name: "Viola Mattke"
 relation: "Grandma"
+featured:            # recipe folder names, first one gets the big spot
+  - cottage-potatoes
+  - grandma-vis-cinnamon-rolls
 links:
   - title: "Her obituary"
     where: "Legacy.com"

@@ -5,6 +5,8 @@ people: ["Grandma Vi"]
 categories: ["Breads & rolls"]
 tags: ["yeast", "rolls", "cinnamon"]
 yield: "Several dozen"
+featured: true
+feature_order: 2
 oven: "375°"
 time: "15-20 minutes"
 

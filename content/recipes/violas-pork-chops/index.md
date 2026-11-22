@@ -4,6 +4,8 @@ summary: "Mayonnaise-brushed pork chops in a saltine and onion soup crust."
 people: ["Grandma Vi"]
 categories: ["Main dishes"]
 tags: ["pork"]
+featured: true
+feature_order: 3
 yield: "8 servings"
 oven: "425°"
 time: "35 to 40 min"

@@ -1,0 +1,25 @@
+{{- /* A row of smaller featured recipes. Context: dict "pages" (slice of Pages) "heading" "id" "showCook". */ -}}
+{{- with .pages }}
+<section class="favorites" aria-labelledby="{{ $.id }}">
+  <h2 id="{{ $.id }}">{{ $.heading }}</h2>
+  <ul class="favorites-list">
+  {{- range . }}
+    {{- $r := . }}
+    <li class="fav">
+      <a class="fav-link" href="{{ .RelPermalink }}">
+        {{- $thumb := "" }}
+        {{- with .Params.photos }}{{ $thumb = $r.Resources.Get (index . 0).image }}{{ end }}
+        {{- if not $thumb }}{{ with .Params.sources }}{{ $thumb = $r.Resources.Get (index . 0).image }}{{ end }}{{ end }}
+        {{- with $thumb }}{{ $t := .Fill "360x240 webp Center" }}
+        <img class="fav-img" src="{{ $t.RelPermalink }}" width="{{ $t.Width }}" height="{{ $t.Height }}" alt="" loading="lazy">
+        <span class="fav-title">{{ .Title }}</span>
+        {{- else }}
+        <span class="fav-card"><span class="fav-title">{{ .Title }}</span></span>
+        {{- end }}
+      </a>
+      {{- if $.showCook }}{{ with .GetTerms "people" }}<span class="fav-by">{{ (index . 0).LinkTitle }}</span>{{ end }}{{ end }}
+    </li>
+  {{- end }}
+  </ul>
+</section>
+{{- end }}

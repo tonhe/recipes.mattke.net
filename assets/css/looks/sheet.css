@@ -265,3 +265,26 @@ a[data-lightbox] { cursor: zoom-in; display: block; }
 }
 .recipe-source.is-note .clip-mast { font-family: var(--font-display); font-style: normal; font-weight: 400; text-transform: none; letter-spacing: 0; border: 0; padding: 0; margin: 0 0 0.25rem; font-size: 0.95rem; }
 .group-break { border: 0; border-top: 2px dashed var(--ink); width: 6rem; margin: 0.6rem 0 0.6rem 2.2em; }
+
+/* Family favorites: the smaller featured recipes under the big one */
+.favorites { padding: 1.75rem 0 2rem; border-bottom: 2px solid var(--ink); }
+.favorites h2 { font-weight: 400; font-size: 1.35rem; margin: 0 0 1rem; text-shadow: var(--ribbon); }
+.favorites-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem 1.5rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 12.5rem), 1fr)); }
+.fav { display: grid; gap: 0.2rem; align-content: start; }
+.fav-link { display: grid; gap: 0.5rem; text-decoration: none; }
+.fav-img, .fav-card { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; box-shadow: 0 1px 2px rgb(0 0 0 / 0.18), 0 8px 16px -10px rgb(0 0 0 / 0.4); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+/* No photo yet: a blank index card with the title typed on it */
+.fav-card {
+  display: grid; align-content: start; padding: 1.15rem 0.9rem 0.75rem; background:
+    linear-gradient(#c8372d, #c8372d) 0 2.6rem / 100% 1.5px no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 calc(1.45rem - 1px), #a9cbe3 calc(1.45rem - 1px) 1.45rem) 0 2.6rem / 100% 100% no-repeat,
+    #fffefa;
+}
+.fav-card .fav-title { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; line-height: 1.25; text-shadow: var(--ribbon); }
+.fav-link:hover .fav-card { transform: rotate(-1deg) translateY(-2px); }
+.fav-title { font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
+.fav-link:hover .fav-title { text-decoration-thickness: 2px; }
+.fav-link:hover .fav-img { transform: rotate(-1deg) translateY(-2px); }
+.fav-by { font-family: var(--font-display); font-size: 0.92em; color: var(--ink-soft); }
+.term-head + .feature { border-top: 2px solid var(--ink); margin-top: 1.25rem; }
+@media (prefers-reduced-motion: reduce) { .fav-img { transition: none; } }

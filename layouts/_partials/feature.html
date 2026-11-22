@@ -1,0 +1,24 @@
+{{- /* The big feature: her handwriting, the quote, and the card photo. Context: a recipe Page. */ -}}
+{{- $r := . }}
+{{- $cook := index ($r.GetTerms "people") 0 }}
+<section class="feature" aria-labelledby="feature-{{ $r.File.ContentBaseName }}">
+  <div class="feature-words">
+    {{- with $r.Params.note_image }}{{ with $r.Resources.Get . }}
+    <span class="feature-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
+    {{- end }}{{ else }}{{ with $r.Params.title_image }}{{ with $r.Resources.Get . }}
+    <span class="feature-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
+    {{- end }}{{ end }}{{ end }}
+    {{- with $r.Params.author_note }}<p class="feature-quote">&ldquo;{{ . }}&rdquo;{{ with $cook }} <span class="feature-who">{{ .LinkTitle }}</span>{{ end }}</p>{{ end }}
+    <h2 id="feature-{{ $r.File.ContentBaseName }}" class="feature-title"><a href="{{ $r.RelPermalink }}">{{ $r.Title }}</a></h2>
+    {{- with $r.Summary }}<p class="feature-summary">{{ . | plainify }}</p>{{ end }}
+  </div>
+  {{- $img := "" }}
+  {{- with $r.Params.sources }}{{ $img = $r.Resources.Get (index . 0).image }}{{ end }}
+  {{- if not $img }}{{ with $r.Params.photos }}{{ $img = $r.Resources.Get (index . 0).image }}{{ end }}{{ end }}
+  {{- with $img }}
+  {{- $sm := .Resize "640x webp" }}
+  <a class="feature-card" href="{{ $r.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="">
+  </a>
+  {{- end }}
+</section>
