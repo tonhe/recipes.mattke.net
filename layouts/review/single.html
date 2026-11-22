@@ -1,0 +1,100 @@
+{{ define "head" }}<meta name="robots" content="noindex">{{ end }}
+{{ define "main" }}
+{{- $drafts := where (where site.RegularPages "Section" "recipes") "Draft" true }}
+{{- $n := 0 }}{{ $own := 0 }}{{ range $drafts }}{{ range .Params.review }}{{ if eq .kind "owner" }}{{ $own = add $own 1 }}{{ else }}{{ $n = add $n 1 }}{{ end }}{{ end }}{{ end }}
+{{- $names := slice "Grandma Vi" "Dad" "Tony" "Mom" }}{{ range site.Taxonomies.people }}{{ $names = $names | append .Page.Title }}{{ end }}{{ $names = $names | uniq }}
+<article class="review" aria-labelledby="review-h">
+  <h1 id="review-h">{{ .Title }}</h1>
+  <datalist id="people-list">{{ range $names }}<option value="{{ . }}">{{ end }}</datalist>
+  <p class="review-intro">{{ len $drafts }} draft recipe{{ if ne (len $drafts) 1 }}s{{ end }}: {{ $own }} need an owner (and a yes or no on showing the photo), and there {{ if eq $n 1 }}is 1 question{{ else }}are {{ $n }} questions{{ end }} about what a line says. Each one shows the spot on the card up close, then the whole card with that spot outlined. Type what you read, or "leave it" to keep my version. When you're done, press <b>Collect my answers</b> and paste the text into the chat.</p>
+
+  {{- range $r := $drafts }}
+  <section class="review-recipe" id="{{ $r.File.ContentBaseName }}">
+    <h2><a href="{{ $r.RelPermalink }}">{{ $r.Title }}</a>{{ with $r.Params.variant }} <span class="variant">· {{ . }}</span>{{ end }}</h2>
+    {{- if not $r.Params.review }}<p class="review-none">No specific questions recorded for this draft.</p>{{ end }}
+    {{- $qn := 0 }}
+    {{- range $i, $q := $r.Params.review }}
+    {{- if eq $q.kind "owner" }}
+    {{- $id := printf "o-%s" $r.File.ContentBaseName }}
+    <div class="review-owner">
+      <div class="review-photos">
+        {{- range $r.Params.sources }}{{ with $r.Resources.Get .image }}{{ $sm := .Resize "700x webp q82" }}
+        <a href="{{ .RelPermalink }}" data-lightbox="owner-{{ $r.File.ContentBaseName }}" data-caption="{{ $r.Title }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="Photo of the page" loading="lazy"></a>
+        {{- end }}{{ end }}
+      </div>
+      <div class="review-owner-fields">
+        {{- with $r.Params.owner_hint }}<p class="review-hint"><span>My guess:</span> {{ . }}</p>{{ end }}
+        <label for="{{ $id }}-who">Whose recipe is it?</label>
+        <input id="{{ $id }}-who" list="people-list" data-recipe="{{ $r.File.ContentBaseName }}" data-field="owner" data-current="{{ delimit ($r.Params.people | default slice) ", " }}" value="" placeholder="{{ delimit ($r.Params.people | default (slice "unknown")) ", " }}">
+        <label for="{{ $id }}-src">Where did it come from? <small>(optional: a person, a book, a church cookbook…)</small></label>
+        <input id="{{ $id }}-src" data-recipe="{{ $r.File.ContentBaseName }}" data-field="source" data-current="">
+        <fieldset class="review-show">
+          <legend>Show the photo on the site?</legend>
+          <label><input type="radio" name="{{ $id }}-show" value="yes" data-recipe="{{ $r.File.ContentBaseName }}" data-field="show photo"> Yes</label>
+          <label><input type="radio" name="{{ $id }}-show" value="no" data-recipe="{{ $r.File.ContentBaseName }}" data-field="show photo"> No, just the recipe</label>
+        </fieldset>
+      </div>
+    </div>
+    {{- else }}
+    {{- $qn = add $qn 1 }}
+    {{- with $r.Resources.Get $q.card }}
+    {{- $W := float .Width }}{{ $H := float .Height }}
+    {{- $x := float (index $q.box 0) }}{{ $y := float (index $q.box 1) }}{{ $w := float (index $q.box 2) }}{{ $h := float (index $q.box 3) }}
+    {{- $big := .Resize "1600x webp q85" }}
+    <div class="review-q">
+      <p class="review-question"><span class="review-num">{{ $qn }}.</span> {{ $q.question }}</p>
+      <figure class="review-zoom" style="{{ printf "aspect-ratio:%g/%g" $w $h | safeCSS }}">
+        <img src="{{ $big.RelPermalink }}" alt="" style="{{ printf "width:%.3f%%;left:-%.3f%%;top:-%.3f%%" (mul 100 (div $W $w)) (mul 100 (div $x $w)) (mul 100 (div $y $h)) | safeCSS }}">
+      </figure>
+      <div class="review-row">
+        <a class="review-card" href="{{ .RelPermalink }}" data-lightbox="review-{{ $r.File.ContentBaseName }}-{{ $i }}" data-caption="{{ $r.Title }}: {{ $q.card }}">
+          {{- $sm := .Resize "480x webp" }}
+          <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="The whole card">
+          <span class="review-box" style="{{ printf "left:%.3f%%;top:%.3f%%;width:%.3f%%;height:%.3f%%" (mul 100 (div $x $W)) (mul 100 (div $y $H)) (mul 100 (div $w $W)) (mul 100 (div $h $H)) | safeCSS }}"></span>
+        </a>
+        <div class="review-answer">
+          <p class="review-current"><span>I have:</span> <code>{{ $q.current }}</code></p>
+          <label for="a-{{ $r.File.ContentBaseName }}-{{ $i }}">Your reading</label>
+          <textarea id="a-{{ $r.File.ContentBaseName }}-{{ $i }}" rows="2" data-recipe="{{ $r.File.ContentBaseName }}" data-q="{{ $qn }}" data-current="{{ $q.current }}"></textarea>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+    {{- end }}
+    {{- end }}
+  </section>
+  {{- end }}
+
+  <section class="review-collect" aria-labelledby="collect-h">
+    <h2 id="collect-h">Send them back</h2>
+    <button type="button" class="tool" data-collect>Collect my answers</button>
+    <textarea class="review-out" rows="8" readonly aria-label="Your answers, ready to copy" placeholder="Your answers will appear here. Select all, copy, and paste them into the chat."></textarea>
+  </section>
+</article>
+<script>
+(() => {
+  const boxes = [...document.querySelectorAll('.review-answer textarea, .review-owner-fields input:not([type=radio])')];
+  const radios = [...document.querySelectorAll('.review-show input[type=radio]')];
+  radios.forEach((r) => {
+    try { if (localStorage.getItem('review:' + r.name) === r.value) r.checked = true; } catch {}
+    r.addEventListener('change', () => { try { localStorage.setItem('review:' + r.name, r.value); } catch {} });
+  });
+  const key = (b) => 'review:' + b.id;
+  boxes.forEach((b) => {
+    try { b.value = localStorage.getItem(key(b)) || ''; } catch {}
+    b.addEventListener('input', () => { try { localStorage.setItem(key(b), b.value); } catch {} });
+  });
+  const out = document.querySelector('.review-out');
+  document.querySelector('[data-collect]').addEventListener('click', () => {
+    const lines = boxes.filter((b) => b.value.trim()).map((b) => b.dataset.field
+      ? `${b.dataset.recipe} ${b.dataset.field}: ${b.value.trim()}`
+      : `${b.dataset.recipe} #${b.dataset.q}: ${b.value.trim()}   (I had: ${b.dataset.current})`);
+    radios.filter((r) => r.checked).forEach((r) => lines.push(`${r.dataset.recipe} show photo: ${r.value}`));
+    lines.sort();
+    out.value = lines.length ? 'Card review answers\n' + lines.join('\n') : 'No answers typed yet.';
+    out.focus(); out.select();
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(out.value).catch(() => {});
+  });
+})();
+</script>
+{{ end }}

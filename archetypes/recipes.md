@@ -11,6 +11,7 @@ yield: ""             # as written, e.g. "Serves about 10"
 oven: ""              # e.g. "350°"
 time: ""              # as written, e.g. "about 1 hr"
 time_label: ""        # defaults to "Bake". Use "Cook", "Simmer", etc. for stovetop recipes.
+show_photos: true     # false keeps the card photos off the site (the recipe still shows)
 featured: false       # true puts it on the front page
 feature_order: 0      # lower comes first; the first featured recipe gets the big spot
 

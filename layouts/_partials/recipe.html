@@ -84,7 +84,7 @@
   <section class="story" aria-label="The story">{{ . }}</section>
   {{- end }}
 
-  {{- with $p.Params.sources }}
+  {{- if ne $p.Params.show_photos false }}{{ with $p.Params.sources }}
   <section class="originals" aria-labelledby="orig-h">
     <h2 id="orig-h">The original{{ if gt (len .) 1 }} cards{{ else }} card{{ end }}</h2>
     <div class="cards">
@@ -97,7 +97,7 @@
     </div>
     <p class="cards-caption">{{ range $i, $s := . }}{{ if $i }} · {{ end }}{{ $s.caption }}{{ end }}</p>
   </section>
-  {{- end }}
+  {{- end }}{{ end }}
   {{- with $p.Params.versions }}
   <section class="versions" aria-labelledby="versions-h">
     <h2 id="versions-h">Other versions</h2>
