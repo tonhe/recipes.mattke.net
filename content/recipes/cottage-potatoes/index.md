@@ -34,6 +34,12 @@ steps:
 
 author_note: "This is good with any kind of meat – my family's favorite potato recipe"
 
+photos:
+  - image: dish-before.jpg
+    caption: "Going in"
+  - image: dish-after.jpg
+    caption: "Coming out, bubbly"
+
 versions:
   - name: "Aunt Teddy's version"
     by: "Aunt Teddy (Theodora Bernier), Grandma Vi’s youngest sister"

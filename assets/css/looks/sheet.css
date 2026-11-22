@@ -5,7 +5,8 @@
 @font-face { font-family: "Public Sans"; src: url(/fonts/public-sans-700-normal.woff2) format("woff2"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "Public Sans"; src: url(/fonts/public-sans-400-italic.woff2) format("woff2"); font-style: italic; font-display: swap; }
 /* Public Sans sets the en dash with almost no side space ("potatoes–cooked"); borrow a roomier one. */
-@font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-400.woff2) format("woff2"); font-weight: 400 700; unicode-range: U+2013; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-400.woff2) format("woff2"); font-weight: 400; unicode-range: U+2013; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-700.woff2) format("woff2"); font-weight: 700; unicode-range: U+2013; font-display: swap; }
 @font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-400i.woff2) format("woff2"); font-style: italic; unicode-range: U+2013; font-display: swap; }
 @font-face { font-family: "Alfa Slab One"; src: url(/fonts/alfa-slab-400.woff2) format("woff2"); font-display: swap; }
 
@@ -211,3 +212,18 @@ h1.site-name { margin: 0; font-weight: 400; font-size: clamp(2.1rem, 1.4rem + 3.
 }
 .by-person .recipe-index .by { display: none; }
 .term-head + .term-recipes:not(.by-person) { margin-top: 1.25rem; }
+
+/* Snapshots of the finished dish, taped onto the sheet */
+.snapshots { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2.5rem 0 0.5rem; padding: 0 0.5rem; }
+.snapshot { position: relative; margin: 0; width: min(15rem, 100%); background: #fff; padding: 0.55rem 0.55rem 0.4rem; box-shadow: 0 1px 2px rgb(0 0 0 / 0.18), 0 10px 20px -12px rgb(0 0 0 / 0.45); }
+.snapshot:nth-child(odd) { transform: rotate(-2deg); }
+.snapshot:nth-child(even) { transform: rotate(1.6deg); margin-top: 0.75rem; }
+.snapshot img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.snapshot figcaption { font-family: var(--font-display); font-size: 0.95rem; padding-top: 0.35rem; text-align: center; }
+.snapshot::before {
+  /* a strip of tape across the top edge */
+  content: ""; position: absolute; top: -0.7rem; left: 50%; width: 4.5rem; height: 1.4rem;
+  translate: -50% 0; rotate: -3deg;
+  background: rgb(246 236 200 / 0.78); box-shadow: 0 1px 1px rgb(0 0 0 / 0.08);
+}
+@media print { .snapshots { display: none; } }

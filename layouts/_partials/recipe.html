@@ -57,6 +57,18 @@
   </figure>
   {{- end }}
 
+  {{- with $p.Params.photos }}
+  <section class="snapshots" aria-label="Photos of the finished dish">
+    {{- range . }}{{ $cap := .caption }}{{ with $p.Resources.Get .image }}
+    {{- $sm := .Resize "560x webp" }}
+    <figure class="snapshot">
+      <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="{{ $p.Title }}{{ with $cap }}, {{ lower . }}{{ end }}">
+      {{- with $cap }}<figcaption>{{ . }}</figcaption>{{ end }}
+    </figure>
+    {{- end }}{{ end }}
+  </section>
+  {{- end }}
+
   {{- with $p.Params.editor_notes }}
   <aside class="editor-notes" aria-label="Notes">
     <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
