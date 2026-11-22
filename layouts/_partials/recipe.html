@@ -1,0 +1,96 @@
+{{- /* Renders a recipe page. Context: the recipe Page. */ -}}
+{{- $p := . }}
+{{- $people := $p.GetTerms "people" }}
+<article class="recipe" aria-labelledby="recipe-title">
+  <header class="recipe-head">
+    <h1 class="recipe-title" id="recipe-title">
+      <span class="title-text">{{ $p.Title }}</span>
+      {{- with $p.Params.title_image }}{{ with $p.Resources.Get . }}
+      <span class="title-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
+      {{- end }}{{ end }}
+    </h1>
+    {{- with $people }}
+    <p class="recipe-credit"><span class="credit-lead">From the kitchen of </span>
+      {{- range $i, $t := . }}{{ if $i }} &amp; {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ with $t.Params.full_name }} <span class="full-name">({{ . }})</span>{{ end }}{{ end -}}
+    </p>
+    {{- end }}
+    {{- with $p.Params.source }}
+    <p class="recipe-source">{{ with .where }}<span class="clip-mast">{{ . }}</span>{{ end }}{{ .label }}{{ with .url }} <a href="{{ . }}">Read the article</a>.{{ end }}</p>
+    {{- end }}
+    <dl class="recipe-facts">
+      {{- with $p.Params.yield }}<div><dt>Makes</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{- with $p.Params.oven }}<div><dt>Oven</dt><dd>{{ . }}</dd></div>{{ end }}
+      {{- with $p.Params.time }}<div><dt>{{ $p.Params.time_label | default "Bake" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+    </dl>
+    <div class="kitchen-tools" hidden>
+      <button type="button" class="tool" data-wake aria-pressed="false">Keep screen on</button>
+      <button type="button" class="tool" data-print>Print</button>
+    </div>
+  </header>
+
+  <section class="ingredients" aria-labelledby="ing-h">
+    <h2 id="ing-h">Ingredients</h2>
+    {{- if $p.Params.ingredient_groups }}
+      {{- range $g, $grp := $p.Params.ingredient_groups }}
+      <h3>{{ $grp.name }}</h3>
+      {{ partial "ingredient-list.html" (dict "items" $grp.ingredients "prefix" (printf "g%d" $g)) }}
+      {{- end }}
+    {{- else }}
+      {{ partial "ingredient-list.html" (dict "items" $p.Params.ingredients "prefix" "i") }}
+    {{- end }}
+  </section>
+
+  <section class="method" aria-labelledby="method-h">
+    <h2 id="method-h">Method</h2>
+    <ol class="steps">
+      {{- range $p.Params.steps }}<li>{{ . }}</li>{{ end }}
+    </ol>
+  </section>
+
+  {{- with $p.Params.author_note }}
+  <figure class="author-note">
+    {{- with $p.Params.note_image }}{{ with $p.Resources.Get . }}
+    <span class="note-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
+    {{- end }}{{ end }}
+    <blockquote><p>{{ . }}</p></blockquote>
+    {{- with $people }}<figcaption>{{ (index . 0).LinkTitle }}, on the card</figcaption>{{ end }}
+  </figure>
+  {{- end }}
+
+  {{- with $p.Params.editor_notes }}
+  <aside class="editor-notes" aria-label="Notes">
+    <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+  </aside>
+  {{- end }}
+
+  {{- with $p.Content }}
+  <section class="story" aria-label="The story">{{ . }}</section>
+  {{- end }}
+
+  {{- with $p.Params.sources }}
+  <section class="originals" aria-labelledby="orig-h">
+    <h2 id="orig-h">The original{{ if gt (len .) 1 }} cards{{ else }} card{{ end }}</h2>
+    <div class="cards">
+    {{- range . }}{{ with $p.Resources.Get .image }}
+      {{- $sm := .Resize "720x webp" }}
+      <figure class="card-photo">
+        <a href="{{ .RelPermalink }}"><img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" loading="lazy" alt="Photo of the handwritten card. The transcription above contains the same text."></a>
+      </figure>
+    {{- end }}{{ end }}
+    </div>
+    <p class="cards-caption">{{ range $i, $s := . }}{{ if $i }} · {{ end }}{{ $s.caption }}{{ end }}</p>
+  </section>
+  {{- end }}
+  {{- with $p.Params.versions }}
+  <section class="versions" aria-labelledby="versions-h">
+    <h2 id="versions-h">Other versions</h2>
+    {{- range . }}
+    <div class="version">
+      <h3>{{ with .url }}<a href="{{ . }}">{{ end }}{{ .name }}{{ if .url }}</a>{{ end }}</h3>
+      <p class="version-by">{{ .by }}{{ with .where }} · {{ . }}{{ end }}</p>
+      {{- with .notes }}<ul>{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+    </div>
+    {{- end }}
+  </section>
+  {{- end }}
+</article>

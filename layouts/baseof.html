@@ -1,0 +1,44 @@
+<!doctype html>
+{{- $look := .Params.look | default site.Params.look }}
+<html lang="{{ site.Language.Locale }}" data-look="{{ $look }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · {{ site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+  {{- with .Params.look }}<meta name="robots" content="noindex">{{ end }}
+  {{- $base := resources.Get "css/base.css" }}
+  {{- $parts := slice $base }}
+  {{- with resources.Get (printf "css/looks/%s.css" $look) }}{{ $parts = $parts | append . }}{{ else }}{{ warnf "missing look stylesheet: %s" $look }}{{ end }}
+  {{- $css := $parts | resources.Concat (printf "css/%s.css" $look) | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- block "head" . }}{{ end }}
+</head>
+<body class="{{ .Kind }} {{ .Section }}">
+  <a class="skip" href="#main">Skip to content</a>
+  {{- block "lookbar" . }}{{ end }}
+  <div class="frame">
+    <header class="site-head">
+      {{- if .IsHome }}
+      <h1 class="site-name">{{ site.Title }}</h1>
+      {{- else }}
+      <a class="site-name" href="{{ "/" | relURL }}">{{ site.Title }}</a>
+      {{- end }}
+      <nav class="site-nav" aria-label="Site">
+        {{- $here := .Section }}{{ with .Data.Plural }}{{ $here = . }}{{ end }}
+        <a href="{{ "/people/" | relURL }}"{{ if eq $here "people" }} aria-current="page"{{ end }}>People</a>
+        <a href="{{ "/categories/" | relURL }}"{{ if eq $here "categories" }} aria-current="page"{{ end }}>Kinds of dishes</a>
+        <a href="{{ "/about/" | relURL }}"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>
+      </nav>
+    </header>
+    <main id="main">
+      {{- block "main" . }}{{ end }}
+    </main>
+    <footer class="site-foot">
+      <p class="copyright">&copy; {{ now.Year }} {{ site.Params.author }}. Recipes are the family's, shared in their memory.</p>
+    </footer>
+  </div>
+  {{- $js := resources.Get "js/kitchen.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</body>
+</html>

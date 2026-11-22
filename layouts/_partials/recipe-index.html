@@ -1,0 +1,9 @@
+<ul class="recipe-index">
+{{- range .ByTitle }}
+  <li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{- with .GetTerms "people" }} <span class="by">{{ (index . 0).LinkTitle }}</span>{{ end }}
+    {{- with .Summary }}<p>{{ . | plainify }}</p>{{ end }}
+  </li>
+{{- end }}
+</ul>

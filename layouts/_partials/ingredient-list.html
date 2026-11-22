@@ -1,0 +1,14 @@
+<ul class="ingredient-list">
+{{- range $i, $it := .items }}
+  {{- $id := printf "%s-%d" $.prefix $i }}
+  <li>
+    <input type="checkbox" id="{{ $id }}">
+    <label for="{{ $id }}">
+      <span class="line">{{ $it.line }}</span>
+      {{- with $it.alt }} <span class="alt">({{ . }})</span>{{ end }}
+      {{- with $it.note }} <span class="aside">({{ . }})</span>{{ end }}
+    </label>
+    {{- with $it.editor }}<small class="ed"><span class="ed-label">Note:</span> {{ . }}</small>{{ end }}
+  </li>
+{{- end }}
+</ul>

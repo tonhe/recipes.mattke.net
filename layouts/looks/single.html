@@ -1,0 +1,2 @@
+{{ define "lookbar" }}{{ partial "lookbar.html" . }}{{ end }}
+{{ define "main" }}{{ with site.GetPage .Params.recipe }}{{ partial "recipe.html" . }}{{ end }}{{ end }}

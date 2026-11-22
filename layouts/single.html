@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="page" aria-labelledby="page-title">
+  <h1 id="page-title">{{ .Title }}</h1>
+  <div class="prose">{{ .Content }}</div>
+  {{- with .Params.links }}
+  <section class="term-links" aria-labelledby="links-h">
+    <h2 id="links-h">Elsewhere</h2>
+    <ul>
+    {{- range . }}
+      <li>
+        <a href="{{ .url }}">{{ .title }}</a>{{ with .where }} <span class="where">· {{ . }}</span>{{ end }}
+        {{- with .note }}<p class="link-note">{{ . }}</p>{{ end }}
+      </li>
+    {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</article>
+{{ end }}

@@ -1,0 +1,213 @@
+/* Typed sheet: a punched, hand-ruled typed sheet in ribbon-black ink, laid on goldenrod cardstock.
+   The only other color is Grandma's blue-black pen. */
+@font-face { font-family: "Special Elite"; src: url(/fonts/special-elite-400.woff2) format("woff2"); font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/public-sans-400-normal.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/public-sans-700-normal.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/public-sans-400-italic.woff2) format("woff2"); font-style: italic; font-display: swap; }
+/* Public Sans sets the en dash with almost no side space ("potatoes–cooked"); borrow a roomier one. */
+@font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-400.woff2) format("woff2"); font-weight: 400 700; unicode-range: U+2013; font-display: swap; }
+@font-face { font-family: "Public Sans"; src: url(/fonts/atkinson-400i.woff2) format("woff2"); font-style: italic; unicode-range: U+2013; font-display: swap; }
+@font-face { font-family: "Alfa Slab One"; src: url(/fonts/alfa-slab-400.woff2) format("woff2"); font-display: swap; }
+
+:root {
+  --ground: #e4aa3c;      /* goldenrod cardstock */
+  --paper: #fffefb;
+  --ink: #1d1c1a;         /* typewriter ribbon */
+  --ink-soft: #4b4843;
+  --accent: #1d1c1a;
+  --rule: #1d1c1a;
+  --hand-ink: #1c2452;    /* her pen */
+  --font-body: "Public Sans", system-ui, sans-serif;
+  --font-display: "Special Elite", "Courier New", monospace;
+  --font-label: "Special Elite", "Courier New", monospace;
+  --ribbon: 0 0 0.4px var(--ink), 0.3px 0.3px 1px rgb(29 28 26 / 0.35);
+}
+::selection { background: #f3d58e; color: var(--ink); }
+
+.frame { max-width: 54rem; margin: 0 auto; padding: 0 var(--gutter) 3rem; }
+
+.site-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 0.75rem 2rem;
+  padding: 2rem 0 1.4rem;
+}
+.site-name { font-family: "Alfa Slab One", serif; font-size: clamp(1.5rem, 1.15rem + 1.8vw, 2.4rem); line-height: 1; text-decoration: none; text-wrap: balance; }
+.site-nav { display: flex; gap: 1.25rem; font-weight: 700; }
+
+main {
+  position: relative;
+  background: var(--paper);
+  padding: clamp(2rem, 5vw, 3.25rem) clamp(1.9rem, 5vw, 3.5rem) clamp(2.25rem, 5vw, 3.25rem) clamp(4rem, 9vw, 5.5rem);
+  background-image:
+    radial-gradient(circle at 1.6rem 4.5rem, var(--ground) 0 0.55rem, transparent 0.6rem),
+    radial-gradient(circle at 1.6rem 26rem, var(--ground) 0 0.55rem, transparent 0.6rem),
+    radial-gradient(circle at 1.6rem 47.5rem, var(--ground) 0 0.55rem, transparent 0.6rem);
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 2px rgb(60 35 0 / 0.25), 0 18px 40px -18px rgb(60 35 0 / 0.55);
+}
+main::before {
+  content: ""; position: absolute; inset: 0.8rem 0.8rem 0.8rem 3.1rem;
+  border: 3px double var(--ink); opacity: 0.8; pointer-events: none;
+}
+
+.recipe-head { margin-bottom: 1.75rem; }
+.recipe-title { margin: 0; }
+.recipe-title .title-text { display: block; font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.2rem); font-weight: 400; text-shadow: var(--ribbon); }
+.title-hand { width: min(22rem, 85%); margin: 0.6rem 0 0; }
+.recipe-credit { margin: 0.9rem 0; font-family: var(--font-display); }
+.recipe-facts { font-family: var(--font-display); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); padding: 0.45rem 0; }
+.recipe-facts dt::after { content: ":"; }
+.kitchen-tools { margin-top: 1rem; }
+
+.recipe h2 { font-size: 1.35rem; font-weight: 400; margin: 2rem 0 0.6rem; text-shadow: var(--ribbon); }
+.recipe h2::after { content: ""; display: block; width: 4.5rem; height: 2px; background: var(--ink); margin-top: 0.3rem; transform: rotate(-0.8deg); }
+.ingredient-list input { accent-color: var(--ink); }
+.alt, .aside { font-style: italic; color: var(--hand-ink); }
+.ed { font-style: italic; font-size: 0.9em; }
+.ed-label { font-style: normal; }
+
+.author-note { margin: 2.5rem 0 0; padding-top: 1.5rem; border-top: 2px dashed var(--ink); }
+.note-hand { width: min(30rem, 100%); }
+.author-note blockquote { margin-top: 0.6rem; font-style: italic; max-width: 52ch; text-wrap: pretty; }
+.author-note figcaption { font-family: var(--font-display); font-size: 0.9em; }
+.author-note figcaption::before { content: "— "; }
+
+.originals { margin-top: 2.5rem; }
+.card-photo img { box-shadow: 0 2px 6px rgb(0 0 0 / 0.25); }
+.cards-caption { font-size: 0.9em; color: var(--ink-soft); }
+
+
+.site-foot { font-size: 0.9em; padding-top: 1.5rem; max-width: 60ch; }
+@media print { main::before { display: none; } main { background-image: none !important; } }
+
+/* Where a recipe came from when it isn't her card: a newspaper clipping pasted on the sheet */
+.recipe-source {
+  position: relative; margin: 0.25rem 0 1.25rem; padding: 0.9rem 1rem 1rem; max-width: 34rem;
+  background: #f1ede2; color: #24221f;
+  font-family: "Source Serif 4", Georgia, serif; font-size: 0.95em; line-height: 1.45; text-wrap: pretty;
+  transform: rotate(-0.6deg);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.12), 0 6px 14px -8px rgb(0 0 0 / 0.35);
+  clip-path: polygon(0 3%, 6% 0, 14% 2%, 23% 0, 31% 2.5%, 42% 0, 53% 2%, 61% 0, 72% 2.5%, 83% 0, 92% 2%, 100% 0, 100% 97%, 93% 100%, 84% 98%, 74% 100%, 63% 97.5%, 52% 100%, 41% 98%, 30% 100%, 19% 97.5%, 9% 100%, 0 98%);
+}
+.recipe-source .clip-mast { display: block; font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; border-bottom: 1px solid currentColor; padding-bottom: 0.3rem; margin-bottom: 0.45rem; }
+
+/* Other versions: someone else's write-up, compared against the card */
+.versions { margin-top: 2.5rem; }
+.version h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; margin: 0.25rem 0 0.1rem; }
+.version-by { margin: 0 0 0.5rem; color: var(--ink-soft); font-size: 0.92em; text-wrap: pretty; }
+.version ul { margin: 0; padding-left: 1.2em; }
+.version li + li { margin-top: 0.35em; }
+
+/* Person and category pages */
+.term-head h1, .taxonomy main > h1, .section main > h1 { font-weight: 400; font-size: clamp(1.8rem, 1.4rem + 1.5vw, 2.6rem); margin: 0; text-shadow: var(--ribbon); }
+.term-head .full-name { font-family: var(--font-display); margin: 0.4rem 0 0; }
+.term-recipes h2, .term-links h2 { font-size: 1.35rem; font-weight: 400; margin: 2rem 0 0.6rem; text-shadow: var(--ribbon); border-bottom: 2px solid var(--ink); padding-bottom: 0.25rem; }
+.term-links ul { list-style: none; padding: 0; margin: 0; }
+.term-links li { padding: 0.6rem 0; border-bottom: 1px dashed var(--ink); }
+.term-links a { font-weight: 700; }
+.term-links .where { color: var(--ink-soft); }
+.link-note { margin: 0.2rem 0 0; color: var(--ink-soft); font-size: 0.92em; }
+.people-index li { padding: 0.5rem 0; border-bottom: 1px dashed var(--ink); }
+.people-index a { font-weight: 700; }
+
+/* Front page: title page, a featured card, then the contents with dot leaders */
+.intro { text-align: center; padding-bottom: 1.5rem; border-bottom: 2px solid var(--ink); }
+.intro-text p { font-family: var(--font-display); font-size: 1.2rem; }
+.home-title { font-weight: 400; font-size: clamp(2rem, 1.4rem + 2.6vw, 3.2rem); line-height: 1.1; margin: 0.5rem auto 0.75rem; max-width: 16ch; text-shadow: var(--ribbon); }
+.intro-text p { margin: 0 auto; max-width: 52ch; text-wrap: balance; }
+.tally { font-family: var(--font-display); margin: 0.9rem 0 0; color: var(--ink-soft); }
+
+.feature { display: grid; gap: 1.5rem 2.5rem; align-items: center; padding: 2.25rem 0; border-bottom: 2px solid var(--ink); }
+@media (min-width: 48rem) { .feature { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); } }
+.feature-hand { width: 100%; max-width: 30rem; }
+.feature-quote { margin: 0.75rem 0 0; font-style: italic; max-width: 40ch; }
+.feature-who { font-style: normal; font-family: var(--font-display); white-space: nowrap; }
+.feature-who::before { content: "— "; }
+.feature-title { font-weight: 400; font-size: 1.6rem; margin: 1.4rem 0 0.2rem; text-shadow: var(--ribbon); }
+.feature-title a { text-decoration-thickness: 2px; }
+.feature-summary { margin: 0; color: var(--ink-soft); }
+.feature-card { display: block; transform: rotate(2deg); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+.feature-card img { box-shadow: 0 2px 4px rgb(0 0 0 / 0.2), 0 16px 30px -14px rgb(0 0 0 / 0.5); }
+.feature:hover .feature-card { transform: rotate(0.5deg) translateY(-3px); }
+
+.contents h2, .kitchens h2 { font-weight: 400; font-size: 1.5rem; text-align: center; margin: 2.25rem 0 1rem; text-shadow: var(--ribbon); }
+.contents-group + .contents-group { margin-top: 1.5rem; }
+.contents-group h3 { font-family: var(--font-display); font-weight: 400; font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 0.4rem; }
+.contents-group h3 a { text-decoration: none; }
+.toc, .kitchen-list { list-style: none; padding: 0; margin: 0; }
+.toc li { display: flex; align-items: baseline; gap: 0.5rem; padding: 0.3rem 0; }
+.toc a { font-weight: 700; }
+.toc .leader { flex: 1; min-width: 1.5rem; border-bottom: 2px dotted var(--ink); translate: 0 -0.3em; }
+.toc .by { font-family: var(--font-display); white-space: nowrap; }
+.kitchen-list { text-align: center; }
+.kitchen-list li { padding: 0.25rem 0; }
+.kitchen-list a { font-weight: 700; }
+.kitchen-list .count { font-family: var(--font-display); }
+.kitchen-list .count::before { content: "· "; }
+@media (prefers-reduced-motion: reduce) { .feature-card { transition: none; } }
+
+/* List pages that still use the plain index */
+.recipe-index li { padding: 0.6rem 0; border-bottom: 1px dashed var(--ink); }
+.recipe-index a { font-weight: 700; }
+.recipe-index .by { font-family: var(--font-display); margin-left: 0.4em; }
+/* On the front page the band carries the name, larger. */
+h1.site-name { margin: 0; font-weight: 400; font-size: clamp(2.1rem, 1.4rem + 3.2vw, 3.6rem); }
+.home .site-head { padding: 2.5rem 0 1.75rem; }
+.feature { padding-right: 0.75rem; }
+.feature-card { margin: 0.5rem 0.25rem; }
+.feature-hand { max-width: 34rem; }
+@media (max-width: 30rem) { .toc li { flex-wrap: wrap; } .toc .leader { display: none; } .toc .by { flex-basis: 100%; font-size: 0.9em; } }
+
+/* Plain pages (About) */
+.page h1 { font-weight: 400; font-size: clamp(1.8rem, 1.4rem + 1.5vw, 2.6rem); margin: 0 0 1rem; text-shadow: var(--ribbon); }
+.prose { max-width: 62ch; }
+.prose p { margin: 0 0 1em; }
+.site-foot p { margin: 0 0 0.5rem; }
+.copyright { font-family: var(--font-display); }
+
+/* Checkboxes drawn like a typed box */
+.ingredient-list input {
+  appearance: none; -webkit-appearance: none;
+  width: 1.15em; height: 1.15em; margin-top: 0.25em;
+  border: 2px solid var(--ink); background: var(--paper); border-radius: 1px;
+  display: grid; place-content: center;
+}
+.ingredient-list input::before {
+  content: ""; width: 0.65em; height: 0.65em;
+  clip-path: polygon(14% 44%, 0 59%, 40% 100%, 100% 20%, 86% 6%, 39% 70%);
+  background: var(--ink); transform: scale(0); transition: transform 0.12s ease-out;
+}
+.ingredient-list input:checked::before { transform: scale(1); }
+
+/* Current section in the nav */
+.site-nav a[aria-current="page"] { text-decoration-thickness: 3px; }
+
+/* Full names and counts in lists */
+.people-index .count::before, .kitchen-list .count::before { content: "· "; }
+.people-index .full-name, .kitchen-list .full-name { color: var(--ink-soft); }
+
+/* Page not found */
+.not-found h1 { font-weight: 400; font-size: clamp(1.8rem, 1.4rem + 1.5vw, 2.6rem); margin: 0 0 0.75rem; text-shadow: var(--ribbon); }
+
+/* Phones: a narrower punched margin so the column keeps its width */
+@media (max-width: 30rem) {
+  .frame { padding-inline: 0.5rem; }
+  .site-head { padding-inline: 0.5rem; }
+  main {
+    padding: 1.75rem 1.15rem 2rem 2.6rem;
+    background-image:
+      radial-gradient(circle at 1rem 3.5rem, var(--ground) 0 0.4rem, transparent 0.45rem),
+      radial-gradient(circle at 1rem 22rem, var(--ground) 0 0.4rem, transparent 0.45rem),
+      radial-gradient(circle at 1rem 40.5rem, var(--ground) 0 0.4rem, transparent 0.45rem);
+  }
+  main::before { inset: 0.55rem 0.55rem 0.55rem 2rem; border-width: 3px; }
+  .ingredient-list li { column-gap: 0.5em; grid-template-columns: 1.4em 1fr; }
+}
+
+@media print {
+  :root { --ground: #fff; }
+  html, body { background: #fff !important; }
+  .recipe-source { transform: none; box-shadow: none; clip-path: none; border: 1px solid #999; }
+  .ingredient-list input { display: none !important; }
+}
+.by-person .recipe-index .by { display: none; }
+.term-head + .term-recipes:not(.by-person) { margin-top: 1.25rem; }

@@ -1,0 +1,23 @@
+{{ define "main" }}
+<section class="not-found" aria-labelledby="nf-h">
+  <h1 id="nf-h">That page isn't in the binder.</h1>
+  <p>It may have moved, or the link was mistyped. Everything we have is listed below.</p>
+</section>
+<section class="contents" aria-labelledby="contents-h">
+  <h2 id="contents-h">Contents</h2>
+  {{- range site.Taxonomies.categories.Alphabetical }}
+  <div class="contents-group">
+    <h3><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></h3>
+    <ul class="toc">
+    {{- range .Pages.ByTitle }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="leader" aria-hidden="true"></span>
+        {{- with .GetTerms "people" }}<span class="by">{{ (index . 0).LinkTitle }}</span>{{ end }}
+      </li>
+    {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+</section>
+{{ end }}

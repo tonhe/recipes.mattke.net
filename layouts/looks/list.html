@@ -1,0 +1,6 @@
+{{ define "lookbar" }}{{ partial "lookbar.html" . }}{{ end }}
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ .Content }}
+<ul class="recipe-index">{{ range .RegularPages }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}</ul>
+{{ end }}

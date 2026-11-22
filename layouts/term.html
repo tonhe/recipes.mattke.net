@@ -1,0 +1,25 @@
+{{ define "main" }}
+{{- $isPerson := eq .Data.Plural "people" }}
+<header class="term-head">
+  <h1>{{ .Title }}</h1>
+  {{- with .Params.full_name }}<p class="full-name">{{ . }}</p>{{ end }}
+  {{ .Content }}
+</header>
+<section class="term-recipes{{ if $isPerson }} by-person{{ end }}"{{ if $isPerson }} aria-labelledby="recipes-h"{{ else }} aria-label="Recipes"{{ end }}>
+  {{- if $isPerson }}<h2 id="recipes-h">Recipes</h2>{{ end }}
+  {{ if .Pages }}{{ partial "recipe-index.html" .Pages }}{{ else }}<p>No recipes here yet.</p>{{ end }}
+</section>
+{{- with .Params.links }}
+<section class="term-links" aria-labelledby="links-h">
+  <h2 id="links-h">Elsewhere</h2>
+  <ul>
+  {{- range . }}
+    <li>
+      <a href="{{ .url }}">{{ .title }}</a>{{ with .where }} <span class="where">· {{ . }}</span>{{ end }}
+      {{- with .note }}<p class="link-note">{{ . }}</p>{{ end }}
+    </li>
+  {{- end }}
+  </ul>
+</section>
+{{- end }}
+{{ end }}

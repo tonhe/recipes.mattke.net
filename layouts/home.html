@@ -1,0 +1,61 @@
+{{ define "main" }}
+{{- $recipes := where site.RegularPages "Section" "recipes" }}
+{{- $feature := index (where $recipes "Params.featured" true) 0 }}
+{{- if not $feature }}{{ $feature = index $recipes 0 }}{{ end }}
+
+<section class="intro" aria-label="About this collection">
+  <div class="intro-text">{{ .Content }}</div>
+  <p class="tally">{{ len $recipes }} recipe{{ if ne (len $recipes) 1 }}s{{ end }} from {{ len site.Taxonomies.people }} kitchen{{ if ne (len site.Taxonomies.people) 1 }}s{{ end }}, and counting.</p>
+</section>
+
+{{- with $feature }}
+{{- $cook := index (.GetTerms "people") 0 }}
+<section class="feature" aria-labelledby="feature-h">
+  <div class="feature-words">
+    {{- with .Params.note_image }}{{ with $feature.Resources.Get . }}
+    <span class="feature-hand hand" aria-hidden="true" style="{{ printf "--hand:url(%s);--ratio:%d/%d" .RelPermalink .Width .Height | safeCSS }}"></span>
+    {{- end }}{{ end }}
+    {{- with .Params.author_note }}<p class="feature-quote">&ldquo;{{ . }}&rdquo;{{ with $cook }} <span class="feature-who">{{ .LinkTitle }}</span>{{ end }}</p>{{ end }}
+    <h2 id="feature-h" class="feature-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{- with .Summary }}<p class="feature-summary">{{ . | plainify }}</p>{{ end }}
+  </div>
+  {{- with .Params.sources }}{{ with $feature.Resources.Get (index . 0).image }}
+  {{- $sm := .Resize "640x webp" }}
+  <a class="feature-card" href="{{ $feature.RelPermalink }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="">
+  </a>
+  {{- end }}{{ end }}
+</section>
+{{- end }}
+
+<section class="contents" aria-labelledby="contents-h">
+  <h2 id="contents-h">Contents</h2>
+  {{- range site.Taxonomies.categories.Alphabetical }}
+  <div class="contents-group">
+    <h3><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></h3>
+    <ul class="toc">
+    {{- range .Pages.ByTitle }}
+      <li>
+        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <span class="leader" aria-hidden="true"></span>
+        {{- with .GetTerms "people" }}<span class="by">{{ (index . 0).LinkTitle }}</span>{{ end }}
+      </li>
+    {{- end }}
+    </ul>
+  </div>
+  {{- end }}
+</section>
+
+<section class="kitchens" aria-labelledby="kitchens-h">
+  <h2 id="kitchens-h">From the kitchens of</h2>
+  <ul class="kitchen-list">
+  {{- range site.Taxonomies.people.Alphabetical }}
+    <li>
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      {{- with .Page.Params.full_name }} <span class="full-name">({{ . }})</span>{{ end }}
+      <span class="count">{{ .Count }} recipe{{ if ne .Count 1 }}s{{ end }}</span>
+    </li>
+  {{- end }}
+  </ul>
+</section>
+{{ end }}

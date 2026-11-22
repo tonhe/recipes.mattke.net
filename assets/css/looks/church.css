@@ -1,0 +1,100 @@
+/* Church cookbook: a comb-bound fundraiser book. Goldenrod cardstock, typed pages, red comb. */
+@font-face { font-family: "Courier Prime"; src: url(/fonts/courier-prime-400.woff2) format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url(/fonts/courier-prime-700.woff2) format("woff2"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "Courier Prime"; src: url(/fonts/courier-prime-400i.woff2) format("woff2"); font-style: italic; font-display: swap; }
+@font-face { font-family: "Alfa Slab One"; src: url(/fonts/alfa-slab-400.woff2) format("woff2"); font-display: swap; }
+
+:root {
+  --ground: #e4aa3c;      /* goldenrod cardstock */
+  --paper: #fffefb;
+  --ink: #161514;
+  --ink-soft: #4d4945;
+  --accent: #b3261e;      /* comb binding red */
+  --rule: #161514;
+  --hand-ink: #1c2452;    /* her blue-black pen */
+  --font-body: "Courier Prime", "Courier New", monospace;
+  --font-display: "Courier Prime", "Courier New", monospace;
+  --font-label: "Courier Prime", "Courier New", monospace;
+  --step-0: clamp(1.1rem, 1.04rem + 0.3vw, 1.25rem);
+}
+
+body { line-height: 1.5; }
+
+.frame { max-width: 50rem; margin: 0 auto; padding: 0 var(--gutter) 3rem; }
+
+.site-head {
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 0.75rem 2rem;
+  padding: 2.25rem 0 1.5rem;
+}
+.site-name {
+  font-family: "Alfa Slab One", serif; font-size: clamp(1.6rem, 1.2rem + 2vw, 2.6rem);
+  line-height: 1; text-decoration: none; letter-spacing: 0.01em; max-width: 14ch;
+}
+.site-nav { display: flex; gap: 1.25rem; font-weight: 700; text-transform: uppercase; font-size: 0.85em; letter-spacing: 0.06em; }
+
+/* The typed page, punched and bound on the left. */
+main {
+  position: relative;
+  background: var(--paper);
+  padding: clamp(1.5rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem) clamp(2rem, 5vw, 3.5rem) clamp(2.75rem, 8vw, 5rem);
+  box-shadow: 0 1px 2px rgb(60 35 0 / 0.25), 0 14px 32px -12px rgb(60 35 0 / 0.45);
+}
+main::before {
+  /* comb teeth straddling the edge */
+  content: ""; position: absolute; top: 1.25rem; bottom: 1.25rem; left: -0.6rem; width: 1.9rem;
+  background: repeating-linear-gradient(to bottom, var(--accent) 0 0.7rem, transparent 0.7rem 1.65rem);
+  border-radius: 0.5rem;
+  -webkit-mask: linear-gradient(90deg, #000 0 100%);
+}
+main::after {
+  /* punched slots the comb runs through */
+  content: ""; position: absolute; top: 1.25rem; bottom: 1.25rem; left: 1.55rem; width: 0.35rem;
+  background: repeating-linear-gradient(to bottom, #3a2a0e 0 0.7rem, transparent 0.7rem 1.65rem);
+  opacity: 0.55;
+}
+
+.recipe-head { text-align: center; margin-bottom: 2rem; }
+.recipe-title { margin: 0; font-size: clamp(1.5rem, 1.2rem + 1.4vw, 2.1rem); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.title-hand { width: min(15rem, 70%); margin: 0.9rem auto 0; }
+.recipe-credit { margin: 0.75rem 0 1rem; font-style: italic; }
+.recipe-credit::before { content: "submitted by "; }
+.recipe-credit a { font-style: normal; font-weight: 700; }
+.recipe-facts { justify-content: center; border-block: 1px dashed var(--rule); padding: 0.5rem 0; }
+.recipe-facts dt { text-transform: uppercase; font-weight: 700; font-size: 0.85em; }
+.recipe-facts dt::after { content: ":"; }
+.kitchen-tools { justify-content: center; margin-top: 1rem; }
+
+.recipe h2 {
+  font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; font-weight: 700;
+  margin: 2.25rem 0 0.75rem; text-decoration: underline; text-underline-offset: 0.3em;
+}
+.alt, .aside { font-style: italic; }
+.ed { font-style: normal; }
+.ed-label { font-weight: 700; text-transform: uppercase; font-size: 0.9em; }
+
+.author-note { margin: 2.5rem 0 0; text-align: center; }
+.note-hand { width: min(30rem, 100%); margin: 0 auto 0.75rem; }
+.author-note blockquote { font-style: italic; max-width: 46ch; margin: 0 auto; }
+.author-note figcaption { margin-top: 0.4rem; font-size: 0.85em; color: var(--ink-soft); }
+.author-note figcaption::before { content: "— "; }
+
+.originals { margin-top: 3rem; border-top: 1px dashed var(--rule); }
+.card-photo:nth-child(odd) { transform: rotate(-1.2deg); }
+.card-photo:nth-child(even) { transform: rotate(0.9deg); }
+.card-photo img { box-shadow: 0 2px 6px rgb(0 0 0 / 0.25); }
+.cards-caption { font-size: 0.85em; color: var(--ink-soft); }
+
+/* Home: the table of contents, with dot leaders. */
+.home-title { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.14em; text-align: center; margin: 0 0 0.5rem; }
+.intro { text-align: center; margin-bottom: 2rem; }
+.shelf h2 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.12em; text-align: center; margin: 2rem 0 1rem; }
+.shelf h2 a { text-decoration: none; }
+.recipe-index li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 0.5em; }
+.recipe-index li > a { order: 0; }
+.recipe-index li::after { content: ""; order: 1; flex: 1; border-bottom: 2px dotted var(--ink); min-width: 2rem; translate: 0 -0.3em; }
+.recipe-index .by { order: 2; font-style: italic; }
+.recipe-index p { order: 3; flex-basis: 100%; font-size: 0.85em; margin-bottom: 0.75rem; }
+
+.site-foot { font-size: 0.85em; text-align: center; padding-top: 1.5rem; max-width: 52ch; margin: 0 auto; }
+
+.credit-lead { display: none; }

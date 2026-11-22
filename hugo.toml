@@ -1,0 +1,27 @@
+baseURL = "https://recipes.mattke.net/"
+locale = "en-US"
+title = "From the Mattke Kitchen"
+enableRobotsTXT = true
+
+[params]
+  author = "Anthony Mattke"
+  description = "Family recipes from the Mattke kitchen, in the cooks' own words and handwriting."
+  look = "sheet"  # default look; others kept under /looks/ for comparison
+
+[taxonomies]
+  person = "people"
+  category = "categories"
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[imaging]
+  resampleFilter = "Lanczos"
+  [imaging.jpeg]
+    quality = 82
+  [imaging.webp]
+    quality = 82
+
+[outputs]
+  home = ["html", "rss"]
