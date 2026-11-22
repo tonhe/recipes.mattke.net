@@ -45,6 +45,16 @@ editor_notes:
   - "In her note, \"about 2c\" is crossed out and \"some\" is written above it. A circled mark follows that we can't read."
   - "This card lists no radishes."
 
+review:                # open questions, shown on the /review/ page of the preview server
+  - card: card-2.jpg
+    box: [90, 590, 660, 150]          # x, y, width, height in card pixels
+    question: "At the start of her note, \"about 2c\" is crossed out with \"some\" written above. What is the circled mark after it?"
+    current: "I chop some [circled mark?] onion tops…"
+  - card: card-1.jpg
+    box: [0, 470, 1000, 130]          # x, y, width, height in card pixels
+    question: "On the mustard line, the second number is scribbled out. Can you tell what it was (or should it stay hidden)?"
+    current: "1 – ▮ c. prepared mustard"
+
 sources:
   - image: card-1.jpg
     caption: "The front: ingredients for about 100 servings"

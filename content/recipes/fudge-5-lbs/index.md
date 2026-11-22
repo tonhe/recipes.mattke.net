@@ -36,6 +36,12 @@ editor_notes:
   - "The first letter of \"Combine\" runs off the edge of the card, and \"Boil\" is faded."
   - "The columns of numbers down the right side are someone's sums. They are not part of the recipe."
 
+review:                # open questions, shown on the /review/ page of the preview server
+  - card: card-1.jpg
+    box: [0, 340, 780, 130]          # x, y, width, height in card pixels
+    question: "On the chocolate chips line there is a mark between \"pkgs.\" and \"Choc.\" that reads like a 7. What is it?"
+    current: "3 pkgs. 7[?] Choc. Chips"
+
 sources:
   - image: card-1.jpg
     caption: "The card: an old, stained card in faded pencil"

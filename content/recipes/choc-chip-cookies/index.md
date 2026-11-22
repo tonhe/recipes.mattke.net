@@ -36,6 +36,12 @@ author_note: "Good – one I use 1/1/96"
 editor_notes:
   - "Faint pencil beside the title reads \"(Hershey[?] recipe)\" and then \"(6 doz[?])\"."
 
+review:                # open questions, shown on the /review/ page of the preview server
+  - card: card-1.jpg
+    box: [80, 150, 860, 140]          # x, y, width, height in card pixels
+    question: "Faint pencil to the right of the title. Does it say \"(Hershey recipe)\" and \"(6 doz)\"?"
+    current: "(Hershey[?] recipe)  (6 doz[?])"
+
 sources:
   - image: card-1.jpg
     caption: "The card, with her pencil note and \"Good – one I use 1/1/96\""

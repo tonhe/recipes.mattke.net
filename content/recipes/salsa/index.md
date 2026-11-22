@@ -28,6 +28,12 @@ steps:
 
 author_note: "Can be canned."
 
+review:                # open questions, shown on the /review/ page of the preview server
+  - card: card-1.jpg
+    box: [120, 330, 904, 150]          # x, y, width, height in card pixels
+    question: "On the vinegar line, the note after \"½ this\" is burned off. What did it say? (Your copy of the recipe would settle it.)"
+    current: "3 c vinegar (cider)  (½ this [?])"
+
 sources:
   - image: card-1.jpg
     caption: "The front, in red ink, with the burn on the right edge"

@@ -1,0 +1,64 @@
+{{ define "head" }}<meta name="robots" content="noindex">{{ end }}
+{{ define "main" }}
+{{- $drafts := where (where site.RegularPages "Section" "recipes") "Draft" true }}
+{{- $n := 0 }}{{ range $drafts }}{{ $n = add $n (len (.Params.review | default slice)) }}{{ end }}
+<article class="review" aria-labelledby="review-h">
+  <h1 id="review-h">{{ .Title }}</h1>
+  <p class="review-intro">{{ $n }} question{{ if ne $n 1 }}s{{ end }} across {{ len $drafts }} draft recipe{{ if ne (len $drafts) 1 }}s{{ end }}. Each one shows the spot on the card up close, then the whole card with that spot outlined. Type what you read, or "leave it" to keep my version. When you're done, press <b>Collect my answers</b> and paste the text into the chat.</p>
+
+  {{- range $r := $drafts }}
+  <section class="review-recipe" id="{{ $r.File.ContentBaseName }}">
+    <h2><a href="{{ $r.RelPermalink }}">{{ $r.Title }}</a>{{ with $r.Params.variant }} <span class="variant">· {{ . }}</span>{{ end }}</h2>
+    {{- if not $r.Params.review }}<p class="review-none">No specific questions recorded for this draft.</p>{{ end }}
+    {{- range $i, $q := $r.Params.review }}
+    {{- with $r.Resources.Get $q.card }}
+    {{- $W := float .Width }}{{ $H := float .Height }}
+    {{- $x := float (index $q.box 0) }}{{ $y := float (index $q.box 1) }}{{ $w := float (index $q.box 2) }}{{ $h := float (index $q.box 3) }}
+    {{- $big := .Resize "1600x webp q85" }}
+    <div class="review-q">
+      <p class="review-question"><span class="review-num">{{ add $i 1 }}.</span> {{ $q.question }}</p>
+      <figure class="review-zoom" style="{{ printf "aspect-ratio:%g/%g" $w $h | safeCSS }}">
+        <img src="{{ $big.RelPermalink }}" alt="" style="{{ printf "width:%.3f%%;left:-%.3f%%;top:-%.3f%%" (mul 100 (div $W $w)) (mul 100 (div $x $w)) (mul 100 (div $y $h)) | safeCSS }}">
+      </figure>
+      <div class="review-row">
+        <a class="review-card" href="{{ .RelPermalink }}" data-lightbox="review-{{ $r.File.ContentBaseName }}-{{ $i }}" data-caption="{{ $r.Title }}: {{ $q.card }}">
+          {{- $sm := .Resize "480x webp" }}
+          <img src="{{ $sm.RelPermalink }}" width="{{ $sm.Width }}" height="{{ $sm.Height }}" alt="The whole card">
+          <span class="review-box" style="{{ printf "left:%.3f%%;top:%.3f%%;width:%.3f%%;height:%.3f%%" (mul 100 (div $x $W)) (mul 100 (div $y $H)) (mul 100 (div $w $W)) (mul 100 (div $h $H)) | safeCSS }}"></span>
+        </a>
+        <div class="review-answer">
+          <p class="review-current"><span>I have:</span> <code>{{ $q.current }}</code></p>
+          <label for="a-{{ $r.File.ContentBaseName }}-{{ $i }}">Your reading</label>
+          <textarea id="a-{{ $r.File.ContentBaseName }}-{{ $i }}" rows="2" data-recipe="{{ $r.File.ContentBaseName }}" data-q="{{ add $i 1 }}" data-current="{{ $q.current }}"></textarea>
+        </div>
+      </div>
+    </div>
+    {{- end }}
+    {{- end }}
+  </section>
+  {{- end }}
+
+  <section class="review-collect" aria-labelledby="collect-h">
+    <h2 id="collect-h">Send them back</h2>
+    <button type="button" class="tool" data-collect>Collect my answers</button>
+    <textarea class="review-out" rows="8" readonly aria-label="Your answers, ready to copy" placeholder="Your answers will appear here. Select all, copy, and paste them into the chat."></textarea>
+  </section>
+</article>
+<script>
+(() => {
+  const boxes = [...document.querySelectorAll('.review-answer textarea')];
+  const key = (b) => 'review:' + b.id;
+  boxes.forEach((b) => {
+    try { b.value = localStorage.getItem(key(b)) || ''; } catch {}
+    b.addEventListener('input', () => { try { localStorage.setItem(key(b), b.value); } catch {} });
+  });
+  const out = document.querySelector('.review-out');
+  document.querySelector('[data-collect]').addEventListener('click', () => {
+    const lines = boxes.filter((b) => b.value.trim()).map((b) => `${b.dataset.recipe} #${b.dataset.q}: ${b.value.trim()}   (I had: ${b.dataset.current})`);
+    out.value = lines.length ? 'Card review answers\n' + lines.join('\n') : 'No answers typed yet.';
+    out.focus(); out.select();
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(out.value).catch(() => {});
+  });
+})();
+</script>
+{{ end }}
