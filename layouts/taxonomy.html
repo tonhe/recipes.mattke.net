@@ -2,7 +2,7 @@
 <h1>{{ if eq .Data.Plural "people" }}People{{ else }}Kinds of dishes{{ end }}</h1>
 <ul class="people-index">
 {{- range .Data.Terms.Alphabetical }}
-  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ with .Page.Params.full_name }} <span class="full-name">({{ . }})</span>{{ end }} <span class="count">{{ .Count }} recipe{{ if ne .Count 1 }}s{{ end }}</span></li>
+  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>{{ with .Page.Params.full_name | default .Page.Params.aka }} <span class="full-name">({{ . }})</span>{{ end }} <span class="count">{{ .Count }} recipe{{ if ne .Count 1 }}s{{ end }}</span></li>
 {{- end }}
 </ul>
 {{ end }}

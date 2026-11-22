@@ -1,7 +1,7 @@
 ---
 title: "Aunt B's Pita Bread"
 summary: "Aunt B's pita bread: white flour and wheat germ, kneaded, cut into 16 pieces, rolled into rounds and baked."
-people: ["Aunt B"]
+people: ["Barb McWilliams"]
 categories: ["Breads & rolls"]
 tags: ["bread", "rolls", "yeast"]
 oven: "350°"

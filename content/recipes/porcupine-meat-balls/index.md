@@ -1,7 +1,7 @@
 ---
 title: "Porcupine Meat Balls"
 summary: "Hamburger and wild rice meatballs with egg, onion, cracker crumbs and seasonings, cooked in tomato juice."
-people: ["Mom"]
+people: ["Vicki Markley"]
 categories: ["Main dishes"]
 tags: ["beef", "meatballs", "rice", "flip book"]
 time: "About an hour"

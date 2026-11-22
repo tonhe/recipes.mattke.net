@@ -2,7 +2,7 @@
 {{- $isPerson := eq .Data.Plural "people" }}
 <header class="term-head">
   <h1>{{ .Title }}</h1>
-  {{- with .Params.full_name }}<p class="full-name">{{ . }}</p>{{ end }}
+  {{- with .Params.full_name | default .Params.aka }}<p class="full-name">{{ . }}</p>{{ end }}
   {{ .Content }}
 </header>
 {{- with .Params.featured }}

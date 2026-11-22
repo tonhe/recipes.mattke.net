@@ -1,7 +1,7 @@
 ---
 title: "Chili Con Carne"
 summary: "Hamburger, tomatoes and kidney beans simmered with chili powder, then baked under a parmesan corn bread topping."
-people: ["Mom"]
+people: ["Vicki Markley"]
 categories: ["Main dishes"]
 tags: ["beef", "chili", "beans", "corn bread", "flip book"]
 oven: "425°"

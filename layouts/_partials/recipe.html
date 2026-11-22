@@ -17,7 +17,7 @@
     <p class="recipe-credit">{{ . | markdownify }}</p>
     {{- else }}{{ with $people }}
     <p class="recipe-credit"><span class="credit-lead">From the kitchen of </span>
-      {{- range $i, $t := . }}{{ if $i }} &amp; {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ with $t.Params.full_name }} <span class="full-name">({{ . }})</span>{{ end }}{{ end -}}
+      {{- range $i, $t := . }}{{ if $i }} &amp; {{ end }}<a href="{{ $t.RelPermalink }}">{{ $t.LinkTitle }}</a>{{ with $t.Params.full_name | default $t.Params.aka }} <span class="full-name">({{ . }})</span>{{ end }}{{ end -}}
     </p>
     {{- end }}{{ end }}
     {{- with $p.Params.source }}

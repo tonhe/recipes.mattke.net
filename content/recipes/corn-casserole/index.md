@@ -1,7 +1,7 @@
 ---
 title: "Corn Casserole"
 summary: "Whole kernel and creamed corn baked with Jiffy corn bread mix, sour cream, egg and butter."
-people: ["Aunt Jill"]
+people: ["Jill Miller"]
 categories: ["Sides"]
 tags: ["corn", "casserole", "flip book"]
 oven: "350°"
