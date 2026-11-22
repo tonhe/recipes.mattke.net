@@ -1,8 +1,7 @@
 ---
 title: "Grandma Vi's Cinnamon Rolls"
-summary: "Overnight yeast rolls with brown sugar and cinnamon. Dad's cut-down version, which still makes several dozen."
-people: ["Grandma Vi", "Dad"]
-credit: "[Grandma Vi](/people/grandma-vi/)'s recipe, cut down by [Dad](/people/dad/)."
+summary: "Overnight yeast rolls with brown sugar and cinnamon. A cut-down version of her recipe that still makes several dozen."
+people: ["Grandma Vi"]
 categories: ["Breads & rolls"]
 tags: ["yeast", "rolls", "cinnamon"]
 yield: "Several dozen"
@@ -13,7 +12,7 @@ time: "15-20 minutes"
 
 source:
   kind: note
-  where: "From Dad"
+  where: "A note with the recipe"
   label: "This is cut down from Grandma's recipe but still makes several dozen."
 
 ingredient_groups:
