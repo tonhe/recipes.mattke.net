@@ -1,6 +1,5 @@
 ---
 title: "Potato Salad"
-variant: "with chives"      # shown in lists to tell same-name recipes apart
 summary: "Sliced boiled potatoes with vinegar, mustard, Miracle Whip, onion and red bell pepper, mixed with chopped eggs and topped with chives and paprika."
 people: ["Grandma Vi"]
 categories: ["Sides"]
