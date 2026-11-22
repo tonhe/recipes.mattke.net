@@ -33,4 +33,7 @@ steps:
   - "**About an hour before serving: Pull the ham.** Remove the hocks and let them cool enough to handle. Strip off the usable meat, shred or chop it, and return it to the crockpot. Discard the bones, tough skin, and excess fat. If you like some of the soft gelatinous skin, finely chop a little and return it for extra body."
   - "**Add the Randall beans and make it creamy.** Add the entire 48-ounce jar of Randall Great Northern beans, including the liquid. Mash 1-2 cups of the cooked navy beans against the side of the crockpot, then stir everything together. Cook on HIGH for another 30-60 minutes, until the added beans are hot and the broth has thickened. Make sure the soup is piping hot throughout."
   - "**Taste and serve.** Remove the bay leaves. Taste before adding any salt because the smoked hocks may have seasoned the entire pot. Add a little more black pepper if needed. Serve with cornbread."
+photos:
+  - image: bowl.jpg
+    caption: "A bowl of it"
 ---
