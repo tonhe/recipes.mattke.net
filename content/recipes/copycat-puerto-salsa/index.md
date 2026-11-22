@@ -1,8 +1,7 @@
 ---
 title: "Copycat Puerto Salsa"
 summary: "Restaurant-style salsa: half blended smooth, half chopped and stirred in, with cilantro, jalapeño and lime, rested overnight."
-people: ["Tony Mattke"]
-credit: "[Tony Mattke](/people/tony-mattke/)'s copy of Ryan Lee's recipe."
+people: ["Ryan Lee"]
 categories: ["Snacks & sauces"]
 tags: ["salsa", "tomatoes", "cilantro"]
 time: "overnight"

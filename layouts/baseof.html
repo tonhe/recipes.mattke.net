@@ -11,6 +11,23 @@
   {{- with resources.Get (printf "css/looks/%s.css" $look) }}{{ $parts = $parts | append . }}{{ else }}{{ warnf "missing look stylesheet: %s" $look }}{{ end }}
   {{- $css := $parts | resources.Concat (printf "css/%s.css" $look) | minify | fingerprint }}
   <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{- /* Open Graph / Twitter: a recipe uses its dish photo or card photo when it shows photos; everything else uses the default card. */}}
+  {{- $og := "" }}
+  {{- if and (eq .Section "recipes") .IsPage (ne .Params.show_photos false) }}
+    {{- with .Params.sources }}{{ with $.Resources.Get (index . 0).image }}{{ $og = .Fill "1200x630 Center q85" }}{{ end }}{{ end }}
+    {{- if not $og }}{{ with .Params.photos }}{{ with $.Resources.Get (index . 0).image }}{{ $og = .Fill "1200x630 Center q85" }}{{ end }}{{ end }}{{ end }}
+  {{- end }}
+  {{- $ogURL := "og-default.jpg" | absURL }}{{ with $og }}{{ $ogURL = .Permalink }}{{ end }}
+  {{- $desc := .Summary | default site.Params.description | plainify | truncate 200 }}
+  <meta property="og:site_name" content="{{ site.Title }}">
+  <meta property="og:title" content="{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:image" content="{{ $ogURL }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   {{- block "head" . }}{{ end }}
 </head>
 <body class="{{ .Kind }} {{ .Section }}">
