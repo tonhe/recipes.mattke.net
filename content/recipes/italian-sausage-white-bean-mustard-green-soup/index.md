@@ -26,6 +26,7 @@ ingredients:
   - line: "½ tsp smoked paprika"
     note: "optional"
   - line: "1 large bunch mustard greens, roughly chopped"
+    note: "the hearty flat leaf kind, not the curly leaf"
   - line: "Black pepper and salt to taste"
   - line: "Hot pepper vinegar to finish (per bowl)"
   - line: "Parmesan for serving"
