@@ -48,7 +48,7 @@
   <section class="method" aria-labelledby="method-h">
     <h2 id="method-h">Method</h2>
     <ol class="steps">
-      {{- range $p.Params.steps }}<li>{{ . }}</li>{{ end }}
+      {{- range $p.Params.steps }}<li>{{ . | markdownify }}</li>{{ end }}
     </ol>
   </section>
 

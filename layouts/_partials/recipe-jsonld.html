@@ -3,7 +3,7 @@
 {{- range $p.Params.ingredients }}{{ $ings = $ings | append .line }}{{ end }}
 {{- range $p.Params.ingredient_groups }}{{ range .ingredients }}{{ $ings = $ings | append .line }}{{ end }}{{ end }}
 {{- $steps := slice }}
-{{- range $p.Params.steps }}{{ $steps = $steps | append (dict "@type" "HowToStep" "text" .) }}{{ end }}
+{{- range $p.Params.steps }}{{ $steps = $steps | append (dict "@type" "HowToStep" "text" (. | markdownify | plainify)) }}{{ end }}
 {{- $authors := slice }}
 {{- range $p.GetTerms "people" }}{{ $authors = $authors | append (dict "@type" "Person" "name" (.Params.full_name | default .LinkTitle)) }}{{ end }}
 {{- $d := dict "@context" "https://schema.org" "@type" "Recipe" "name" $p.Title "description" ($p.Summary | plainify) "recipeIngredient" $ings "recipeInstructions" $steps "author" $authors }}
