@@ -1,5 +1,6 @@
 ---
-title: "Mom's Pink Delight"
+title: "Grandma Markley's Pink Delight"
+aliases: ["/recipes/moms-pink-delight/"]
 summary: "Strawberry or raspberry Jello powder mixed with cottage cheese, pineapple and whipped Dream Whip."
 people: ["Grandma Markley"]
 categories: ["Sides"]

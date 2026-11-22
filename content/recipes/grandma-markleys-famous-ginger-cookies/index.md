@@ -1,5 +1,6 @@
 ---
-title: "Mom's Famous Ginger Cookies"
+title: "Grandma Markley's Famous Ginger Cookies"
+aliases: ["/recipes/moms-famous-ginger-cookies/"]
 summary: "Spiced molasses and coffee ginger cookies, chilled and then rolled into balls or cut out."
 people: ["Grandma Markley"]
 categories: ["Cookies & bars"]
