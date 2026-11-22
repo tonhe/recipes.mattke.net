@@ -214,7 +214,7 @@ h1.site-name { margin: 0; font-weight: 400; font-size: clamp(2.1rem, 1.4rem + 3.
 .term-head + .term-recipes:not(.by-person) { margin-top: 1.25rem; }
 
 /* Snapshots of the finished dish, taped onto the sheet */
-.snapshots { display: flex; flex-wrap: wrap; gap: 1.5rem 2rem; margin: 2.5rem 0 0.5rem; padding: 0 0.5rem; }
+.snapshots { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.5rem 2rem; margin: 2.5rem 0 0.5rem; padding: 0 0.5rem; }
 .snapshot { position: relative; margin: 0; width: min(15rem, 100%); background: #fff; padding: 0.55rem 0.55rem 0.4rem; box-shadow: 0 1px 2px rgb(0 0 0 / 0.18), 0 10px 20px -12px rgb(0 0 0 / 0.45); }
 .snapshot:nth-child(odd) { transform: rotate(-2deg); }
 .snapshot:nth-child(even) { transform: rotate(1.6deg); margin-top: 0.75rem; }
