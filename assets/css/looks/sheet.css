@@ -273,14 +273,18 @@ a[data-lightbox] { cursor: zoom-in; display: block; }
 .fav { display: grid; gap: 0.2rem; align-content: start; }
 .fav-link { display: grid; gap: 0.5rem; text-decoration: none; }
 .fav-img, .fav-card { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; box-shadow: 0 1px 2px rgb(0 0 0 / 0.18), 0 8px 16px -10px rgb(0 0 0 / 0.4); transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
-/* No photo yet: a blank index card with the title typed on it */
+/* No photo: an index card with the title on the top line and the summary typed on the rules */
 .fav-card {
-  display: grid; align-content: start; padding: 1.15rem 0.9rem 0.75rem; background:
-    linear-gradient(#c8372d, #c8372d) 0 2.6rem / 100% 1.5px no-repeat,
-    repeating-linear-gradient(to bottom, transparent 0 calc(1.45rem - 1px), #a9cbe3 calc(1.45rem - 1px) 1.45rem) 0 2.6rem / 100% 100% no-repeat,
+  --rule: 1.5rem;
+  display: grid; align-content: start; gap: 0;
+  padding: 0.7rem 0.9rem 0.8rem; overflow: hidden;
+  background:
+    linear-gradient(#c8372d, #c8372d) 0 calc(0.7rem + var(--rule) + 2px) / 100% 1.5px no-repeat,
+    repeating-linear-gradient(to bottom, transparent 0 calc(var(--rule) - 1px), #a9cbe3 calc(var(--rule) - 1px) var(--rule)) 0 calc(0.7rem + var(--rule) + 2px) / 100% 100% no-repeat,
     #fffefa;
 }
-.fav-card .fav-title { font-family: var(--font-display); font-weight: 400; font-size: 1.15rem; line-height: 1.25; text-shadow: var(--ribbon); }
+.fav-card .fav-title { font-family: var(--font-display); font-weight: 400; font-size: 1.1rem; line-height: var(--rule); padding-bottom: 4px; text-shadow: var(--ribbon); text-decoration: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fav-summary { font-family: var(--font-display); font-size: 0.92rem; line-height: var(--rule); color: var(--hand-ink); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
 .fav-link:hover .fav-card { transform: rotate(-1deg) translateY(-2px); }
 .fav-title { font-weight: 700; text-decoration: underline; text-underline-offset: 0.18em; text-decoration-thickness: 1px; }
 .fav-link:hover .fav-title { text-decoration-thickness: 2px; }

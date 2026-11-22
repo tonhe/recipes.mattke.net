@@ -1,5 +1,7 @@
 ---
 title: "Danish Kringle"
+featured: true
+feature_order: 3
 summary: "A yeast pastry dough made with lard, chilled overnight, rolled thin around a filling and topped with cream cheese frosting."
 people: ["Grandma Vi"]
 categories: ["Breads & rolls"]
