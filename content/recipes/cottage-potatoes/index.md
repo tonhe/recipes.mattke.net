@@ -20,13 +20,11 @@ ingredients:
     note: "I use a little less"
   - line: "2 tsp salt"
     note: "scant"
-    editor: "Scant means just under the full measure."
   - line: "½ med gr. pepper – diced"
-    editor: "gr. = green"
   - line: "½ med red bell pepper"
     alt: "or 1 whole gr pepper"
-  - line: "½ # cheddar cheese"
-    editor: "# = pound (8 oz). Shred it."
+  - line: "½ lb cheddar cheese"
+    editor: "Shred it."
   - line: "1 c milk"
 
 steps:

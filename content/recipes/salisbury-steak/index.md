@@ -10,11 +10,9 @@ time: "1hr"
 title_image: title.png
 
 ingredients:
-  - line: "3# hamburger"
-    editor: "# = pounds."
+  - line: "3 lbs hamburger"
   - line: "1C. crushed crackers"
   - line: "½C water"
-    editor: "The ½ is written in blue ink. The rest of the card is black."
   - line: "½C minced onion"
 
 steps:

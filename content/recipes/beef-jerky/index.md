@@ -13,14 +13,12 @@ title_image: title.png
 
 ingredient_groups:
   - ingredients:
-      - line: "1½ - 2# boneless flank or round steak cut 1/4 inch thick and ▮ inch wide strips"
-        editor: "# = pounds. The number before \"inch wide\" is scribbled out on the card."
+      - line: "1½ - 2 lbs boneless flank or round steak cut 1/4 inch thick and inch wide strips"
   - name: "Put meat in following marinade"
     ingredients:
       - line: "1/4 C soy sauce"
       - line: "1 T Worcestershire"
       - line: "1/4 tsp each pepper and garlic powder"
-        editor: "On the card, \"powder\" for the garlic is tucked in at the end of the next line."
       - line: "1/2 tsp onion powder"
       - line: "1 tsp Hickory smoked salt"
 

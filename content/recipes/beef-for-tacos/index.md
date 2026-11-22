@@ -9,20 +9,17 @@ ingredient_groups:
   - name: "Add"
     ingredients:
       - line: "2 cans gr. Chiles"
-        editor: "gr. = green"
       - line: "onion diced"
       - line: "garlic diced"
 
 steps:
-  - "Roast 5-7# brisket at 450° for about 1 uncovered –"
+  - "Roast 5-7 lbs brisket at 450° for about 1 uncovered –"
   - "2c water Salt + pepper – cover – cook 6 hrs at 300° –"
   - "Cool – Shred – Add"
   - "Add a little water and Simmer at 350° for about 45 min"
 
 editor_notes:
-  - "# = pounds. She doesn't say 1 what for the first roast. Probably 1 hour."
-  - "The brisket, water, salt and pepper are named in the steps, not in a list."
-  - "The last step is written beside the chiles, onion and garlic with a brace."
+  - "She doesn't say 1 what for the first roast. Probably 1 hour."
 
 sources:
   - image: card-1.jpg

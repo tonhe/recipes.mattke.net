@@ -19,14 +19,12 @@ ingredient_groups:
       - line: "⅔ c butter"
       - line: "1 tsp soda"
       - line: "½ tsp b. powder"
-        editor: "b. powder = baking powder"
       - line: "1 c buttermilk"
       - line: "½ tsp salt"
       - line: "1 tsp vanilla"
   - name: "Coconut pecan frosting"
     ingredients:
       - line: "1 c ev. milk"
-        editor: "ev. milk = evaporated milk"
       - line: "1 c. sugar"
       - line: "3 egg yolks"
       - line: "1 stick butter"
@@ -42,9 +40,6 @@ steps:
   - "Cook in saucepan"
   - "Cool partially – Spread"
 
-editor_notes:
-  - "Bake at 350° for about 35 minutes."
-  - "For the frosting, cook the milk, sugar, yolks and butter in a saucepan until thick. Then stir in the vanilla, coconut and pecans."
 
 sources:
   - image: card-1.jpg

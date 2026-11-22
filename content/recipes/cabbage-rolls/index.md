@@ -13,14 +13,11 @@ ingredient_groups:
     ingredients:
       - line: "1½ lbs gr beef + pork"
         alt: "or all of either"
-        editor: "gr = ground"
       - line: "1 c raw rice"
       - line: "1 lge onion chopped"
-        editor: "lge = large"
       - line: "Salt + pepper"
   - ingredients:
       - line: "1 qt each tomatoes + Sauerkraut"
-        editor: "qt = quart. This goes over the rolls in the pan."
 
 steps:
   - "Soften cabbage leaves in hot water"

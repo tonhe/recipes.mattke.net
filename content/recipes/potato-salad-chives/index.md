@@ -29,8 +29,6 @@ steps:
 
 author_note: "Potatoes are best boiled with skins – peel when cool – they are less moist."
 
-editor_notes:
-  - "The eggs are on the back of the card. Save some chives for the top."
 
 sources:
   - image: card-1.jpg

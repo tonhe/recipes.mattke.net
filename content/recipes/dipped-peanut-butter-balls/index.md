@@ -10,9 +10,7 @@ ingredient_groups:
   - ingredients:
       - line: "2c p butter"
         alt: "1 - 18oz jar"
-        editor: "p butter = peanut butter."
       - line: "2c p. sugar"
-        editor: "p. sugar = powdered sugar."
       - line: "4T. butter – mix well"
   - name: "Add"
     ingredients:
@@ -26,8 +24,6 @@ steps:
   - "Roll in balls – refrigerate"
   - "melt together"
 
-editor_notes:
-  - "On the card a bracket joins the chocolate chips and the paraffin to \"melt together.\""
 
 sources:
   - image: card-1.jpg

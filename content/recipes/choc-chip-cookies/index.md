@@ -13,10 +13,8 @@ ingredient_groups:
       - line: "1 c soft butter"
       - line: "1½ c sugar"
         note: "½ br"
-        editor: "br = brown sugar"
       - line: "2 eggs"
       - line: "1 T dk molasses"
-        editor: "Added later above the eggs, in darker ink."
   - name: "Add"
     ingredients:
       - line: "2¼ c flour"

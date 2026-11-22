@@ -38,7 +38,7 @@ steps:
 author_note: "serve with polish sausage"
 
 editor_notes:
-  - "The back gives three fillings, split by lines on the card. Pick one."
+  - "Pick one of the three fillings."
 
 sources:
   - image: card-1.jpg

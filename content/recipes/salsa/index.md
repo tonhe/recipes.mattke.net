@@ -18,7 +18,6 @@ ingredients:
   - line: "1/3 c fresh garlic or 5 tsp garlic powder"
     editor: "The end of this line is burned off the card."
   - line: "2 tsp gr. cumin"
-    editor: "gr. = ground"
   - line: "3 rounded tsp chili powder"
   - line: "1 fresh chili cut up per qt"
   - line: "8 tsp salt"

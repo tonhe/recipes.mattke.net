@@ -8,11 +8,9 @@ oven: "325°"
 title_image: title.png
 
 ingredients:
-  - line: "2# russet potatoes sliced thin"
-    editor: "# = pounds."
+  - line: "2 lbs russet potatoes sliced thin"
   - line: "1 ½ tsp salt"
   - line: "1½ c ½ – ½"
-    editor: "½ – ½ = half-and-half."
   - line: "½ c heavy cream"
 
 steps:

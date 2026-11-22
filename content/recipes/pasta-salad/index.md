@@ -9,12 +9,10 @@ title_image: title.png
 
 ingredient_groups:
   - ingredients:
-      - line: "½ # shell or other pasta"
-        editor: "# = pound."
+      - line: "½ lb shell or other pasta"
       - line: "½ med red onion sliced thin"
       - line: "1 c coarsely cut tomato"
       - line: "¼ c gr. onion tops"
-        editor: "gr. = green."
       - line: "½ c finely sliced celery"
       - line: "2 boiled egg – cut in chunks"
   - name: "Dressing"
@@ -29,7 +27,7 @@ ingredient_groups:
       - line: "Salt + pepper to taste"
 
 steps:
-  - "Cook ½ # shell or other pasta according to directions"
+  - "Cook ½ lb shell or other pasta according to directions"
   - "Drain + cool –"
   - "To this add"
   - "Add dressing –"
@@ -38,7 +36,6 @@ steps:
   - "Sprinkle with paprika –"
 
 editor_notes:
-  - "\"Salt + pepper to taste – Mix and pour over pasta – Mix well\" is written in the margin of the back, next to the dressing list."
   - "You need 4 boiled eggs in all. Two go in the salad and two go on top."
 
 sources:

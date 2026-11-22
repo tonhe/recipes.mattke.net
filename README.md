@@ -20,7 +20,9 @@ folder. The rules:
 - `line`, `note`, `alt`, `steps` and `author_note` are **verbatim** from the card, abbreviations
   included. The one exception is spelling: a word that looks misspelled is probably a misread of
   the handwriting, so spell it correctly and don't add a note.
-- Anything in our own words goes in `editor` (per ingredient) or `editor_notes` (per recipe).
+- Anything in our own words goes in `editor` (per ingredient) or `editor_notes` (per recipe). Keep
+  those for things a cook needs (a missing ingredient, an unstated time). Don't explain
+  abbreviations or comment on crossings-out, ink or layout. Write "#" as "lb"/"lbs".
 - `title_image` / `note_image` are optional crops of the cook's handwriting: black ink on a
   transparent background. The site recolors them per design.
 

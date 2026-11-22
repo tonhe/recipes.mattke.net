@@ -10,7 +10,7 @@ title_image: title.png
 
 ingredients:
   - line: "Dk meat of chicken only"
-    editor: "Dk = dark. She uses leg quarters."
+    editor: "She uses leg quarters."
 
 steps:
   - "Heat grill hot"

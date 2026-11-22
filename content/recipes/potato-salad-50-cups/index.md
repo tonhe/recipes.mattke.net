@@ -11,23 +11,18 @@ time_label: "Chill"
 title_image: title.png
 
 ingredients:
-  - line: "15# potatoes (boil with skins on – peel)"
-    editor: "# = pounds."
+  - line: "15 lbs potatoes (boil with skins on – peel)"
   - line: "4 dz. eggs"
-    editor: "dz. = dozen. That is 48 eggs, boiled."
   - line: "1c vinegar"
     note: "try 1 cup then add more if needed"
-    editor: "An earlier amount before \"1c\" is scribbled out. A \"1⅓ c\" in blue ink after her note is crossed out too."
   - line: "4 T Salt"
   - line: "½ c. dry onion"
   - line: "1 c. prepared mustard"
-    editor: "She changed this to 1 cup. The other number is scribbled out on the card."
   - line: "1⅓ c sugar"
   - line: "about 2 qts Miracle Whip –"
   - line: "chopped onion tops"
   - line: "½ small pimiento"
     alt: "or 1 red pepper"
-    editor: "A line above this one is crossed out."
 
 steps:
   - "Cut potatoes – add onions, vinegar, salt – mix well –"
@@ -38,9 +33,6 @@ steps:
 
 author_note: "I chop some onion tops and/or 1c pimento or ripe pepper – chopped fine mix in for color – (and flavor"
 
-editor_notes:
-  - "On the back, \"pepper\" after salt is crossed out."
-  - "In her note, \"about 2c\" is crossed out and \"some\" is written above it."
 
 sources:
   - image: card-1.jpg

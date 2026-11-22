@@ -20,7 +20,6 @@ ingredient_groups:
         note: "part cream cheese will thicken add onion to saute."
       - line: "Sauerkraut"
         note: "use part cabbage – Can put ham or p Sausage in"
-        editor: "p probably means polish."
       - line: "Also can use fruit"
 
 steps:
@@ -31,8 +30,6 @@ steps:
   - "Drop in boiling water for 5 min"
   - "Drain – freeze and refrigerate"
 
-editor_notes:
-  - "The front ends with \"over,\" pointing to the filling choices on the back. She doesn't give amounts for them."
 
 sources:
   - image: card-1.jpg

@@ -16,7 +16,6 @@ ingredients:
   - line: "2 cups powder sugar"
   - line: "3 tablespoon Vanilla"
   - line: "4 Oleo sticks"
-    editor: "Oleo = margarine. The 4 is written over another number."
 
 steps:
   - "mixed and work out in small balls"
