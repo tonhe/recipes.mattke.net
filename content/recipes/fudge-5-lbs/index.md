@@ -1,6 +1,5 @@
 ---
 # Draft: a word on the chocolate chip line is a guess, and the card is faded and stained.
-draft: true
 title: "Fudge – 5 lbs"
 summary: "A big batch of chocolate fudge made with Carnation milk, chocolate chips, marshmallow fluff and nuts."
 people: ["Grandma Vi"]
@@ -19,7 +18,7 @@ ingredients:
   - line: "1 large can Carnation Milk"
     editor: "Carnation is evaporated milk."
   - line: "¼ lb. butter"
-  - line: "3 pkgs. 7[?] Choc. Chips"
+  - line: "3 pkgs. of Choc. Chips"
     editor: "There is a mark like a 7 between \"pkgs.\" and \"Choc.\""
   - line: "1 jar Marshmallow Fluff"
   - line: "2 Cup Nutmeats"
@@ -35,12 +34,6 @@ steps:
 editor_notes:
   - "The first letter of \"Combine\" runs off the edge of the card, and \"Boil\" is faded."
   - "The columns of numbers down the right side are someone's sums. They are not part of the recipe."
-
-review:                # open questions, shown on the /review/ page of the preview server
-  - card: card-1.jpg
-    box: [0, 340, 780, 130]          # x, y, width, height in card pixels
-    question: "On the chocolate chips line there is a mark between \"pkgs.\" and \"Choc.\" that reads like a 7. What is it?"
-    current: "3 pkgs. 7[?] Choc. Chips"
 
 sources:
   - image: card-1.jpg

@@ -1,5 +1,4 @@
 ---
-draft: true           # one word in parentheses after the bell pepper line is unclear ("sour"?); ask Tony
 title: "Potato Salad"
 variant: "with chives"      # shown in lists to tell same-name recipes apart
 summary: "Sliced boiled potatoes with vinegar, mustard, Miracle Whip, onion and red bell pepper, mixed with chopped eggs and topped with chives and paprika."
@@ -21,8 +20,6 @@ ingredients:
   - line: "2-3 T chives"
     alt: "or onion tops"
   - line: "¼ c red bell pepper (ripe) cut ¼ in long"
-    note: "[?]"
-    editor: "There's one more word in parentheses at the end of this line that we can't read."
   - line: "8-9 boiled chopped eggs"
 
 steps:
@@ -34,12 +31,6 @@ author_note: "Potatoes are best boiled with skins – peel when cool – they ar
 
 editor_notes:
   - "The eggs are on the back of the card. Save some chives for the top."
-
-review:                # open questions, shown on the /review/ page of the preview server
-  - card: card-1.jpg
-    box: [100, 590, 924, 150]          # x, y, width, height in card pixels
-    question: "What is the word in parentheses at the far right of the bell pepper line, after \"(ripe) cut ¼ in long\"? It looks like \"(sour)\"."
-    current: "¼ c red bell pepper (ripe) cut ¼ in long  [?]"
 
 sources:
   - image: card-1.jpg
