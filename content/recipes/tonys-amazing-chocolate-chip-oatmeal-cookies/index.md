@@ -34,4 +34,7 @@ steps:
   - "Bake 8-9 Minutes until slightly brown on edges."
   - "Allow to cool 5 mins before removing. (They will crumble!)"
 
+photos:
+  - image: cookies.jpg
+    caption: "A full container"
 ---
