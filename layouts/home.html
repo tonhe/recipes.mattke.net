@@ -13,20 +13,16 @@
 
 <section class="contents" aria-labelledby="contents-h">
   <h2 id="contents-h">Contents</h2>
+  <ul class="toc">
   {{- range site.Taxonomies.categories.Alphabetical }}
-  <div class="contents-group">
-    <h3><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></h3>
-    <ul class="toc">
-    {{- range .Pages.ByTitle }}
-      <li>
-        <a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.variant }} <span class="variant">· {{ . }}</span>{{ end }}{{ if .Draft }} <span class="draft-tag">draft</span>{{ end }}
-        <span class="leader" aria-hidden="true"></span>
-        {{- with .GetTerms "people" }}<span class="by">{{ (index . 0).LinkTitle }}</span>{{ end }}
-      </li>
-    {{- end }}
-    </ul>
-  </div>
+    <li>
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      <span class="leader" aria-hidden="true"></span>
+      <span class="by">{{ .Count }} recipe{{ if ne .Count 1 }}s{{ end }}</span>
+    </li>
   {{- end }}
+  </ul>
+  <p class="contents-all"><a href="{{ "recipes/" | relURL }}">Every recipe, A to Z</a></p>
 </section>
 
 <section class="kitchens" aria-labelledby="kitchens-h">

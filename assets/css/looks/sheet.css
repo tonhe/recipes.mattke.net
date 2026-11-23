@@ -338,3 +338,4 @@ a[data-lightbox] { cursor: zoom-in; display: block; }
 .review-show { border: 0; padding: 0; margin: 0.25rem 0 0; display: grid; gap: 0.3rem; }
 .review-show label { font-family: var(--font-body); margin: 0; display: flex; gap: 0.5rem; align-items: center; }
 .recipe-subtitle { margin: 0.35rem 0 0; font-family: var(--font-display); font-size: 1.05rem; color: var(--ink-soft); text-wrap: balance; }
+.contents-all { text-align: center; margin: 1.25rem 0 0; font-family: var(--font-display); }
