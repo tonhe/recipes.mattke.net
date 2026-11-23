@@ -23,6 +23,7 @@ steps:
 
 editor_notes:
   - "A Port-A-Pit is a portable barbecue pit used at Midwest fundraisers."
+  - "The traditional Port-A-Pit baste, mopped on the chicken over the pit: 1 lb butter, 1 cup water, 1 cup vinegar, 4 tbsp salt, 1 tbsp pepper, 4 tbsp Worcestershire sauce and 1 oz Accent. Melt the butter into the water and vinegar and stir in the rest."
 
 sources:
   - image: card-1.jpg
