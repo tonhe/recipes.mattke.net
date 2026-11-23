@@ -35,7 +35,8 @@ ingredient_groups:
         note: "a must"
   - name: "Rice"
     ingredients:
-      - line: "2 cups popcorn rice, such as Cajun Country, or other long-grain white rice"
+      - line: "2 cups popcorn rice"
+        alt: "or basmati or jasmine rice"
       - line: "3 cups water"
       - line: "½ teaspoon Morton table salt"
       - line: "2 bay leaves"
