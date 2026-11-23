@@ -4,6 +4,7 @@ summary: "A small batch of pizza dough: flour, warm water and a packet of yeast,
 people: ["Tony Mattke"]
 categories: ["Breads & rolls"]
 tags: ["pizza", "dough", "bread"]
+show_photos: false
 yield: "One 12-14 inch pizza"
 oven: "475°"
 time: "12-15 min"
@@ -25,8 +26,4 @@ steps:
   - "Put it in an oiled bowl, cover, and let it rise in a warm spot until doubled, 1 to 1½ hours."
   - "Punch it down and stretch or roll it out on a greased or floured pan."
   - "Top it and bake at 475° for 12-15 minutes, until the crust is golden."
-
-sources:
-  - image: card-1.jpg
-    caption: "The note, on a scrap of notebook paper"
 ---
