@@ -4,7 +4,7 @@ summary: "Chocolate fudge cooked to 238°, cooled, then beaten with butter, vani
 people: ["Grandma Vi"]
 categories: ["Candy & frostings"]
 tags: ["fudge", "chocolate", "candy"]
-yield: "Makes 2 lbs"
+yield: "2 lbs"
 time_label: "Cook"
 title_image: title.png
 
