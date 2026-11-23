@@ -1,6 +1,6 @@
 ---
 title: "Potato Salad"
-summary: "Sliced boiled potatoes with vinegar, mustard, Miracle Whip, onion and red bell pepper, mixed with chopped eggs and topped with chives and paprika."
+summary: "Sliced boiled potatoes with vinegar, mustard, Miracle Whip, onion, red bell pepper and radishes, mixed with chopped eggs and topped with chives and paprika."
 people: ["Grandma Vi"]
 categories: ["Sides"]
 tags: ["potatoes", "salad", "eggs"]
@@ -19,6 +19,8 @@ ingredients:
   - line: "2-3 T chives"
     alt: "or onion tops"
   - line: "¼ c red bell pepper (ripe) cut ¼ in long"
+  - line: "3-4 large radishes"
+    editor: "Not on the card. Perry remembers her adding these."
   - line: "8-9 boiled chopped eggs"
 
 steps:
