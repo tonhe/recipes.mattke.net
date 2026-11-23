@@ -14,7 +14,6 @@ ingredient_groups:
       - line: "8 oz bacon, diced"
       - line: "8 oz Mexican chorizo"
       - line: "Hot dogs, sliced"
-        alt: "or diced ham"
       - line: "Ground sausage"
         note: "sometimes"
   - name: "Vegetables"
