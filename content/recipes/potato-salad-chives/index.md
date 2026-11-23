@@ -30,6 +30,9 @@ steps:
 
 author_note: "Potatoes are best boiled with skins – peel when cool – they are less moist."
 
+editor_notes:
+  - "Laurette told Perry to mix the dressing first and taste it, adjusting it until it's right, before you add it to the potatoes."
+
 
 sources:
   - image: card-1.jpg
