@@ -12,7 +12,7 @@ ingredient_groups:
     ingredients:
       - line: "1 lb dried red kidney beans"
         note: "Camellia brand – it has to be Camellia"
-      - line: "1 tablespoon Morton table salt and 6 cups cold water, for soaking"
+      - line: "1 tablespoon table salt and 6 cups cold water, for soaking"
       - line: "1 smoked ham hock"
       - line: "12 oz andouille sausage, diced small"
         alt: "or kielbasa"
@@ -30,7 +30,7 @@ ingredient_groups:
   - name: "Finish"
     ingredients:
       - line: "4 tablespoons unsalted butter"
-      - line: "Up to 2 teaspoons Morton table salt, to taste"
+      - line: "Up to 2 teaspoons table salt, to taste"
       - line: "1 tablespoon Crystal or Louisiana Hot Sauce"
         note: "a must"
   - name: "Rice"
@@ -38,7 +38,7 @@ ingredient_groups:
       - line: "2 cups popcorn rice"
         alt: "or basmati or jasmine rice"
       - line: "3 cups water"
-      - line: "½ teaspoon Morton table salt"
+      - line: "½ teaspoon table salt"
       - line: "2 bay leaves"
       - line: "1 tablespoon unsalted butter"
 
