@@ -16,13 +16,13 @@ ingredients:
   - line: "4 tablespoons butter"
 
 steps:
-  - "**Trim the tri-tip.** Use a sharp boning knife to remove any hard fat and silver skin. These won't render and can make the finished meat less pleasant to eat."
-  - "**Season the meat.** Apply a light coat of mustard, then season evenly with Holy Cow or homemade SPG. Let the tri-tip sit at room temperature for 15 to 20 minutes while the smoker heats."
-  - "**Smoke.** Preheat the smoker to 250°F. Smoke the tri-tip for about 3 hours, or until it reaches 165°F internally."
-  - "**Wrap and finish.** Place the tri-tip on heavy-duty foil, top it with the butter, and wrap it tightly. Return it to the smoker until it reaches 203°F internally or is probe tender."
-  - "**Firm up the bark.** Remove the tri-tip from the foil and return it to the smoker for about 10 minutes."
-  - "**Rest.** Save the juices in the foil for serving. Tent the meat loosely with foil and rest it at room temperature for 30 to 45 minutes. This part is hard to do, but it's worth the wait."
-  - "**Slice.** Tri-tip has two muscles, and their grain runs in different directions. Cut the meat in half where the muscles meet, then slice each half against the grain."
+  - "**Trim.** Cut off any hard fat and silver skin with a sharp boning knife. Neither renders, and both stay chewy."
+  - "**Season.** Rub on a thin coat of mustard, then season evenly with Holy Cow or SPG. Let it sit at room temperature 15 to 20 minutes while the smoker heats."
+  - "**Smoke.** Smoke at 250° until it hits 165° inside, about 3 hours."
+  - "**Wrap.** Lay it on heavy-duty foil, top with the butter, and wrap tight. Back on the smoker until it reaches 203° or a probe slides in with no resistance."
+  - "**Set the bark.** Unwrap it, saving the juices in the foil, and put it back on the smoker for about 10 minutes."
+  - "**Rest.** Tent loosely with foil and rest 30 to 45 minutes. It's hard to wait, but worth it."
+  - "**Slice.** The two muscles run in different directions, so cut it in half where they meet, then slice each half against the grain. Spoon the saved juices over the slices."
 
 photos:
   - image: sliced.jpg
